@@ -65,6 +65,11 @@ table {
 
 
 /* start here */
+
+body{
+  background-image: url("http://imgh.us/grid.svg");
+}
+
 #banner{
   background-image: url("");/*add the header_logo*/
   background-repeat: no-repeat;
@@ -80,7 +85,8 @@ table {
   height: 75px;
   background-color: yellow;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 22px;
+  background-image: url("");
 }
 
 #icon a{
@@ -142,8 +148,8 @@ nav ul#main_nav{
   height: 115px;
   padding: 5px 0 0;
   margin: 25px auto;
-  background-color: white;
-  border: 2px solid gray;
+  background-color: #a4bcd6;
+  border: 3px solid gray;
   font-family: 'Lato', sans-serif;
 }
 
@@ -172,8 +178,8 @@ nav ul#main_nav{
 
 .visited div.advise{
   margin-left: 93px;
-  color: #b5b5b5;
-  font-size: 11px;
+  color: #a6a6a6;
+  font-size: 15px;
   margin-top: 4px;
   letter-spacing: -0.6px;
   width: 200px;
@@ -283,3 +289,6 @@ p{
 }
 */
 
+
+  /*background-color: #a4bcd6;
+*/

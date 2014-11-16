@@ -1,7 +1,7 @@
 var restify = require('restify');
 var mongojs = require('mongojs');
 
-var db = mongojs('localhost:27017', ['backpack']);
+var db = mongojs.connect('localhost:27017/backpack');
 var alerts = db.collection('alerts');
 
 var server = restify.createServer({
@@ -26,9 +26,11 @@ server.post('/netdata', function create(req, res, next) {
 						var regpattern = /www\.(.*)\.com/;
 						var result = stringbody.match(regpattern);
 						// store alert's result domain
-						alerts.insert(result[0],
+						console.log(result[0]);
+						alerts.save(JSON.parse(result[0]),
 													function (err, data) {
-															
+															console.log(err);
+															console.log(data);
 													});
 													 
 				}

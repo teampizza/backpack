@@ -1,7 +1,8 @@
 var restify = require('restify');
 var mongojs = require('mongojs');
 
-var db = mongojs('localhost:27017', ['netdata']);
+var db = mongojs('localhost:27017', ['backpack']);
+var alerts = db.collection('alerts');
 
 var server = restify.createServer({
 		name: 'backpacklistener',
@@ -14,7 +15,6 @@ server.post('/netdata', function create(req, res, next) {
 		var body = '';
     req.on('data', function (data) {
         body += data;
-				// console.log(body.toString());
     });
     req.on('end', function () {
 				// simple search for bad domain connect.facebook.net
@@ -25,8 +25,12 @@ server.post('/netdata', function create(req, res, next) {
 						// find where it came from
 						var regpattern = /www\.(.*)\.com/;
 						var result = stringbody.match(regpattern);
-						// console.log(result)
-						result[0]
+						// store alert's result domain
+						alerts.insert(result[0],
+													function (err, data) {
+															
+													});
+													 
 				}
 				
 				// TODO DB storage and non-crazy searching

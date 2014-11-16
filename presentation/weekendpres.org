@@ -1,0 +1,32 @@
+﻿
+
+* For Headings
+- For Bullets
+/italics/
+*bold*
+
+* The problem:
+Free is not free. If you use a free service, you are not the consumer, you are the product.
+
+There's a lot of information moving around over the Internet, including information about you. A
+
+The world is more interconnected today than it has ever been before. This yields great benefits such as $2 shipping, Tinder, and amusing Twitter fights.
+However, there's a trade-off.  Every time you go to click one of these (Show image of "login with Facebook") or these (Show image of "Accept" button at Starbucks),
+your information is being sent somewhere.
+
+
+* Introducing Backpack
+Backpack is the everyperson's tool to taking back control of their information online.
+With Backpack, every time your information (what kind of information?) is sent to (insert a specific recipent of information), you are notified.
+
+* Benefits
+This makes our users active participants in their online experience.  
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Main Ideas:So much information circulating around online. Some of this information is your personal identity. 
+- Problem: According to PEW, 60% of Americans would like to regain control of their information "quote from PEW"
+- Solution: User can actively monitor and engage with previously hidden information. This in turn builds a 
+common user literacy that prevents outcomes such as identity theft, viruses, and illegal seizure of personal information. 
+- Appeal: Know your identity on the internet before the internet knows your identity. Are you being disriminated against in advertising? 
+- Money: 

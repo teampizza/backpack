@@ -1,4 +1,5 @@
-.sass-cache
-node_modules
-bower_components
-public
+npm-debug.log
+build/
+packages/
+.meteor/
+app/dump/

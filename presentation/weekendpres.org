@@ -29,4 +29,4 @@ Main Ideas:So much information circulating around online. Some of this informati
 - Solution: User can actively monitor and engage with previously hidden information. This in turn builds a 
 common user literacy that prevents outcomes such as identity theft, viruses, and illegal seizure of personal information. 
 - Appeal: Know your identity on the internet before the internet knows your identity. Are you being disriminated against in advertising? 
-- Money: 
+- Money: We make money with a freemium model

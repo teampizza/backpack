@@ -1,96 +1,35 @@
-﻿
+﻿** Problem
 
-* For Headings
-- For Bullets
-/italics/
-*bold*
+- 60% of Americans are thinking about their online identity
 
-* Who we are
+- People unknowingly share their personal information with unsecured sites, lack of net-literacy leaves users' identity vulnerable.
 
-/Backpack is a tool for even the most novice internet user to educate themselves and regain control of thier online identity./
+** Solution
 
-* What we Beleive
+- We provide a Offer a user friendly product that notifies users of dangerous internet habits and provides simple tools to fix the problem.
 
-/Previously hidden data collection should be clearly provided to you, because this better understanding serves to protect you online./
+** Why are we the best?
 
-* Why Backpack?
+- Educate the user 
 
-/Our integral goal is transparency, we capture more types of information than competitors, and the application is easily understood and interacted with./
+- Cap service at $9
 
-- we need to note and address competitors (ghostery: narrow, closed source, not as extensive) 
+- Real-time monitoring
 
-* The problem:
-Free is not free. If you use a free service, you are not the consumer, you are the product.
+- No other product like this
 
-There's a lot of information moving around over the Internet, including information about you. A
+** Why care?
 
-The world is more interconnected today than it has ever been before. This yields great benefits such as $2 shipping, Tinder, and amusing Twitter fights.
-However, there's a trade-off.  Every time you go to click one of these (Show image of "login with Facebook") or these (Show image of "Accept" button at Starbucks),
-your information is being sent somewhere.
+- Virus, identity theft, targeted advertising, easy to prevent, hard to clean-up
 
+- Create the identity you want, without a machine deciding for you
 
-* Introducing Backpack
-Backpack is the everyperson's tool to taking back control of their information online.
-With Backpack, every time your information (what kind of information?) is sent to (insert a specific recipent of information), you are notified.
+** How are we successful?
 
-	- Sell our team
+- By having people download our application, we are creating a literate public, this consequntally turns users into customers as they come to realize how much of their identity information should be protected.
 
-* Benefits
-This makes our users active participants in their online experience.  
+** Target audience
+
+*
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Main Ideas:So much information circulating around online. Some of this information is your personal identity. You've heard the stories of Facebook and Dropbox privacy issues.
-These events happen so frequently that everyday people end up: 
-- surfing ignorantly
-- getting complacent and not caring
-- we think that's sad and we think people can have more control of their online identity than they currently do, and we have data to back this up (PEW data), users
-don't know how but the demand is there. Accrding to PEW, 60% of Americans would like to regain control of their online information, preferably through honest, 
-user friendly methods. So how do they do it?
-
-- Solution: Backpack presents previously hidden data collection clearly, and provides a user friendly platform to engage with thier outgoing information. It is a
-tool for even the most novice internet user to educate themselves and regain control of thier online identity.  
-common user literacy that prevents outcomes such as identity theft, viruses, and illegal seizure of personal information. 
-- Appeal: Know your identity on the internet before the internet knows your identity. Are you being disriminated against in advertising? 
-- Money: We make money with a freemium model, building recognition to eventually sell monitoring model to enterprises 
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-3 Model Prototypes to sell the product below
-
-Subscription
-Freemium: Free with higher teers
-1 time payment: Pay one fee for these services
-
-Freemium
-
-Free(open source or community) Product: Simple real-time Identity Monitoring
-
-
-
-	1. Social media/Business media tracking: 
-	2. Data use tracking (for networks with datacaps)
-	3. Connection security monitoring (websites negligent in informing users of security vulnerabilities) 
-	4. GeoIP tracking 
-
-Non-free Product: Advanced Identity Monitoring
-
-	1. Financial/Government info tracking
-	2. E-mail record/traffic monitoring 
-	3. Mobile messaging/push monitoring 
-	4. Secure/Insecure connection leak detection
-
-Product pitch and monetization method 
-- Our product is scaled, each instance of this runs at the individual machine level or the local net level 
-- Start on an individual level, building a name and recogition to form a market 
-- Once market is formed, we scale 
-
-
-*NOTES
--Prices of other comparable programs, how much to charge with competing applications on the market
-
-
-	
-
-	

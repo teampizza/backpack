@@ -47,8 +47,6 @@ client = Client()
 
 ## list for line by line
 lines = []
-## list of packets (needed?)
-## packets = []
 
 ## TODO later on we will want to get field spec from models at startup
 ## TODO is -t e redundant? seems like it maybe only works on summary
@@ -73,7 +71,7 @@ for nextline in child:
         nextjson = parsepacket(lines)
 
         ## send JSON blob through socket
-        sendresult = socketsend(nextjson)
+        # sendresult = socketsend(nextjson)
 
         if sendresult == True:
             ## throw away old traffic
@@ -81,12 +79,6 @@ for nextline in child:
 
 child.close()
 
-
-### function: count indent level of line
-## http://stackoverflow.com/a/13241784/2023432
-def indentation(s, tabsize=4):
-    sx = s.expandtabs(tabsize)
-    return 0 if sx.isspace() else len(sx) - len(sx.lstrip())
 
 ### function: parse whole tab-delimited Tshark packets, make JSON
 ## http://stackoverflow.com/a/12533983/2023432
@@ -102,13 +94,16 @@ def parsepacket(packetstring):
     ## 4. remove everything before "= "
     packetlines = packetstring.split("\n")
     packetlines = [line.split('=', 1)[-1] for line in packetlines]
-    ## 5. split on colons
-    # packetlinescolons = packetlines.split(':')
-    ## 6. get tab levels
-    packetlevels = [indentation(line) for line in packetlines]
-    packetlinescolonstabs = tab_level(packetlinescolons)
-    ## 7. apply ttree_to_json(ttree, level=0)
-    return ttree_to_json(packetlinescolonstabs)
+    ## 5. remove leading whitespace
+    packetlinesstrip = [line.strip() for line in packetlines]
+    ## 6. split on colons
+    packetlinesstripcolon = [line.split(':') for line in packetlinesstrip]
+    ## 7. flatten list
+    packetlinesstripcolonflat = sum(packetlinesstripcolon, [])
+    ## 8. strip again (ugh)
+    packetlinesstripcolonflat = [line.strip() for line in packetlinesstripcolonflat]
+    ## 9. convert pairwise to dict
+    return dict(packetlinesstripcolonflat[i:i+2] for i in range(0, len(packetlinesstripcolonflat), 2))
 
 ### function: send JSON blob over socket
 def socketsend(jsonblob):
@@ -116,24 +111,3 @@ def socketsend(jsonblob):
     response = client.recv()
     client.close()
     return response
-
-### function: chunk lists by length
-### http://stackoverflow.com/a/16004505/2023432
-def chunks(seq, n):
-    return (seq[i:i+n] for i in xrange(0, len(seq), n))
-
-### function: import packages from rel paths
-### http://stackoverflow.com/a/1083169/2023432
-def import_path(fullpath):
-    """ 
-    Import a file with full path specification. Allows one to
-    import from anywhere, something __import__ does not do. 
-    """
-    path, filename = os.path.split(fullpath)
-    filename, ext = os.path.splitext(filename)
-    sys.path.append(path)
-    module = __import__(filename)
-    reload(module) # Might be out of date
-    del sys.path[-1]
-    return module
-

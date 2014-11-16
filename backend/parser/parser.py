@@ -8,7 +8,7 @@ import requests # http reqs
 ## http://stackoverflow.com/a/18709228/2023432
 def postsomejson(somejson):
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    url = 'http://127.0.0.1:3001'
+    url = 'http://localhost:3001/netdata' # POST to netdata route
     r = requests.post(url, data=somejson, headers=headers)
     return r
 
@@ -112,16 +112,16 @@ for nextline in child:
         ## that means that `lines` has a whole packet of data
         ## parse lines and make a JSON blob
         nextjson = parsepacket(" ".join(lines))
+        ## print nextjson
 
         ## send JSON blob through HTTP
         resp = postsomejson(nextjson)
         
-        print resp.status_code # == requests.codes.ok
+        ## print resp.status_code # == requests.codes.ok
+        print resp.text
 
         # if resp.status_code == requests.codes.ok:
         ## throw away old traffic
         lines = []
-
-        # print nextjson
 
 child.close()

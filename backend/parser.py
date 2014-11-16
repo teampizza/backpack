@@ -2,6 +2,7 @@
 import pexpect
 jsonsocket = import_path("/home/sobakasu/projects/privacy/backpack/backend/submodules/jsonsocket/jsonsocket.py")
 from jsonsocket import Client, Server
+from utils import * # our util functions
 
 ### initialize socket client
 host = 'localhost'
@@ -100,10 +101,11 @@ def parsepacket(packetstring):
     packetstring = "name: "+packetstring
     ## 4. remove everything before "= "
     packetlines = packetstring.split("\n")
-    packetlines = [line = line.split('=', 1)[-1] for line in packetlines]
+    packetlines = [line.split('=', 1)[-1] for line in packetlines]
     ## 5. split on colons
-    packetlinescolons = packetlines.split(':')
-    ## 6. apply tab_level()
+    # packetlinescolons = packetlines.split(':')
+    ## 6. get tab levels
+    packetlevels = [indentation(line) for line in packetlines]
     packetlinescolonstabs = tab_level(packetlinescolons)
     ## 7. apply ttree_to_json(ttree, level=0)
     return ttree_to_json(packetlinescolonstabs)
@@ -119,50 +121,6 @@ def socketsend(jsonblob):
 ### http://stackoverflow.com/a/16004505/2023432
 def chunks(seq, n):
     return (seq[i:i+n] for i in xrange(0, len(seq), n))
-
-### function: insert or append to dict
-### http://stackoverflow.com/a/24966533/2023432
-def dict_insert_or_append(adict,key,val):
-    """Insert a value in dict at key if one does not exist
-    Otherwise, convert value to list and append
-    """
-    if key in adict:
-        if type(adict[key]) != list:
-            adict[key] = [adict[key]]
-        adict[key].append(val)
-    else:
-        adict[key] = val
-
-def tab_level(astr):
-    """Count number of leading tabs in a string
-    """
-    return len(astr)- len(astr.lstrip('\t'))
-
-def ttree_to_json(ttree,level=0):
-    result = {}
-    for i in range(0,len(ttree)):
-        cn = ttree[i]
-        try:
-            nn  = ttree[i+1]
-        except:
-            nn = {'level':-1}
-
-        # Edge cases
-        if cn['level']>level:
-            continue
-        if cn['level']<level:
-            return result
-
-        # Recursion
-        if nn['level']==level:
-            dict_insert_or_append(result,cn['name'],cn['value'])
-        elif nn['level']>level:
-            rr = ttree_to_json(ttree[i+1:], level=nn['level'])
-            dict_insert_or_append(result,cn['name'],rr)
-        else:
-            dict_insert_or_append(result,cn['name'],cn['value'])
-            return result
-    return result
 
 ### function: import packages from rel paths
 ### http://stackoverflow.com/a/1083169/2023432

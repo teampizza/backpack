@@ -19,14 +19,57 @@ your information is being sent somewhere.
 Backpack is the everyperson's tool to taking back control of their information online.
 With Backpack, every time your information (what kind of information?) is sent to (insert a specific recipent of information), you are notified.
 
+	- Sell our team
+
 * Benefits
 This makes our users active participants in their online experience.  
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Main Ideas:So much information circulating around online. Some of this information is your personal identity. 
 - Problem: According to PEW, 60% of Americans would like to regain control of their information "quote from PEW"
 - Solution: User can actively monitor and engage with previously hidden information. This in turn builds a 
 common user literacy that prevents outcomes such as identity theft, viruses, and illegal seizure of personal information. 
 - Appeal: Know your identity on the internet before the internet knows your identity. Are you being disriminated against in advertising? 
-- Money: We make money with a freemium model
+- Money: We make money with a freemium model, building recognition to eventually sell monitoring model to enterprises 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3 Model Prototypes to sell the product below
+
+Subscription
+Freemium: Free with higher teers
+1 time payment: Pay one fee for these services
+
+Freemium
+
+Free(open source or community) Product: Simple real-time Identity Monitoring
+
+
+
+	1. Social media/Business media tracking
+	2. Data use tracking (for networks with datacaps)
+	3. Connection security monitoring (websites negligent in informing users of security vulnerabilities) 
+	4. GeoIP tracking 
+
+Non-free Product: Advanced Identity Monitoring
+
+	1. Financial/Government info tracking
+	2. E-mail record/traffic monitoring 
+	3. Mobile messaging/push monitoring 
+	4. Secure/Insecure connection leak detection
+
+Product pitch and monetization method 
+- Our product is scaled, each instance of this runs at the individual machine level or the local net level 
+- Start on an individual level, building a name and recogition to form a market 
+- Once market is formed, we scale 
+
+
+*NOTES
+-Prices of other comparable programs, how much to charge with competing applications on the market
+
+
+	
+
+	

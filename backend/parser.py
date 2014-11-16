@@ -1,16 +1,50 @@
 #!/usr/bin/env python
 import pexpect
-jsonsocket = import_path("/home/sobakasu/projects/privacy/backpack/backend/submodules/jsonsocket/jsonsocket.py")
-from jsonsocket import Client, Server
-from utils import * # our util functions
+import json
+# from utils import * # our util functions
 
 ### initialize socket client
 host = 'localhost'
 port = '3000'
 
-# Client code:
-client = Client()
+## Client code:
+## client = Client()
 
+### function: count indent level of line
+## http://stackoverflow.com/a/13241784/2023432
+def indentation(s, tabsize=4):
+    sx = s.expandtabs(tabsize)
+    return 0 if sx.isspace() else len(sx) - len(sx.lstrip())
+
+### function: parse whole tab-delimited Tshark packets, make JSON
+## http://stackoverflow.com/a/12533983/2023432
+## http://stackoverflow.com/a/16405619/2023432
+## http://stackoverflow.com/a/3900089/2023432
+def parsepacket(packetstring):
+    ## 1. remove all brackets/parentheses
+    packetstring = packetstring.translate(None,"()[]")
+    ## 2. convert commas to newlines
+    packetstring = packetstring.replace(",","\n")
+    ## 3. prepend "name: " to string
+    packetstring = "name: "+packetstring
+    ## 4. remove everything before "= "
+    packetlines = packetstring.split("\n")
+    packetlines = [line.split('=', 1)[-1] for line in packetlines]
+    ## 5. remove leading whitespace
+    packetlinesstrip = [line.strip() for line in packetlines]
+    ## 6. split on colons
+    packetlinesstripcolon = [line.split(':') for line in packetlinesstrip]
+    ## 7. flatten list
+    packetlinesstripcolonflat = sum(packetlinesstripcolon, [])
+    ## 8. strip again (ugh)
+    packetlinesstripcolonflat = [line.strip() for line in packetlinesstripcolonflat]
+    ## WORKAROUND for erroneous tokens (odd)
+    ## TODO fix this, idiot
+    if len(packetlinesstripcolonflat) % 2 != 0:
+        packetlinesstripcolonflat = packetlinesstripcolonflat + [" "]
+
+    ## 9. convert pairwise to dict
+    return dict(packetlinesstripcolonflat[i:i+2] for i in range(0, len(packetlinesstripcolonflat), 2))
 
 ### Tshark opts of interest:
 ## -D: list capture interfaces
@@ -56,6 +90,13 @@ tsharkinterface = "-i wlan0"
 ## start tshark process
 ## http://stackoverflow.com/a/20509641/2023432
 child = pexpect.spawn(" ".join(("tshark",tsharkinterface,tsharkopts)))
+### skip a few warning lines
+## TODO address later when privileges restricted
+child.expect('\n')
+child.expect('\n')
+child.expect('\n')
+child.expect('\n')
+child.expect('\n')
 
 for nextline in child:
     # print nextline,
@@ -68,42 +109,19 @@ for nextline in child:
 
         ## that means that `lines` has a whole packet of data
         ## parse lines and make a JSON blob
-        nextjson = parsepacket(lines)
+        nextjson = parsepacket(" ".join(lines))
 
         ## send JSON blob through socket
         # sendresult = socketsend(nextjson)
 
-        if sendresult == True:
+        # if sendresult == True:
             ## throw away old traffic
-            lines = []
+        #    lines = []
 
 child.close()
 
 
-### function: parse whole tab-delimited Tshark packets, make JSON
-## http://stackoverflow.com/a/12533983/2023432
-## http://stackoverflow.com/a/16405619/2023432
-## http://stackoverflow.com/a/3900089/2023432
-def parsepacket(packetstring):
-    ## 1. remove all brackets/parentheses
-    packetstring = packetstring.translate(None,"()[]")
-    ## 2. convert commas to newlines
-    packetstring = packetstring.replace(",","\n")
-    ## 3. prepend "name: " to string
-    packetstring = "name: "+packetstring
-    ## 4. remove everything before "= "
-    packetlines = packetstring.split("\n")
-    packetlines = [line.split('=', 1)[-1] for line in packetlines]
-    ## 5. remove leading whitespace
-    packetlinesstrip = [line.strip() for line in packetlines]
-    ## 6. split on colons
-    packetlinesstripcolon = [line.split(':') for line in packetlinesstrip]
-    ## 7. flatten list
-    packetlinesstripcolonflat = sum(packetlinesstripcolon, [])
-    ## 8. strip again (ugh)
-    packetlinesstripcolonflat = [line.strip() for line in packetlinesstripcolonflat]
-    ## 9. convert pairwise to dict
-    return dict(packetlinesstripcolonflat[i:i+2] for i in range(0, len(packetlinesstripcolonflat), 2))
+
 
 ### function: send JSON blob over socket
 def socketsend(jsonblob):
@@ -111,3 +129,4 @@ def socketsend(jsonblob):
     response = client.recv()
     client.close()
     return response
+

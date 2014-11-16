@@ -12,7 +12,7 @@ Template.hello.helpers({
 
 Template.feed.helpers({
   alerts: function () {
-    return alertsCollection.find();
+    return alertsCollection.find({}, {sort: {created_date: -1}});
   }
 
 });

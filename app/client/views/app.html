@@ -3,13 +3,56 @@
 </head>
 
 <body>
-  <h1>Welcome to BackPack!</h1>
 
+<header>
+  <div id="banner">
+    <h1 id="title">
+      <img alt="Backpack Logo" src="/images/bp-logo.png">
+    </h1>
+  </div>
+  <nav>
+    <ul id="main_nav">
+      <li class="nav_item"><a href="#">Feed</a> &middot; </li>
+      <li class="nav_item"><a href="#">Report</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="body_container" class="clearfix">
   {{> hello}}
+</div>
+
 </body>
 
 <template name="hello">
-  <button class="update">Click Me</button>
-  <button class="submit">Submit Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+  <section class="body_content clearfix">
+    <div class="visited">
+      <img src="http://placekitten.com/g/125/40" alt="backpack">
+      <div class="model">
+        <span class="report">Social Beacon</span>
+        <span class="detail">Detail Report</span>
+      </div>
+      <div class="advise">
+        <p>Advise Information etc........</p>
+      </div>
+    </div>
+
+    <ul id="button">
+      <li class="checkmark">
+        <a href="#">
+          <img src="/images/checkmark.svg" alt="">
+        </a>
+      </li>
+      <li class="minus">
+        <a href="#">
+          <img src="/images/minus_new.svg" alt="">
+        </a>
+      </li>
+      <li class="xmark">
+        <a href="#">
+          <img src="/images/xmark.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </section>
 </template>

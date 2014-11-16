@@ -141,9 +141,9 @@ nav ul#main_nav{
   text-align: left;
   height: 115px;
   padding: 5px 0 0;
-  margin: 5px auto;
+  margin: 25px auto;
   background-color: white;
-  border: 2px solid black;
+  border: 2px solid gray;
   font-family: 'Lato', sans-serif;
 }
 
@@ -189,11 +189,11 @@ nav ul#main_nav{
 /*  font-size: 30px;*/
   color: #fff;
  /* border-radius: 5px;*/
-  margin-top: 25px;
+  margin-top: 40px;
 /*  border: none;*/
 /*  padding: 0;*/
 /*  background-color: transparent;*/
-  border: 3px solid orange;
+  border: 2px solid gray;
   box-sizing: border-box;
 }
 
@@ -227,7 +227,7 @@ ul#button li:last-child{
 }
 
 ul#button li:hover a{
-  background-color: red;  
+  background-color: gray;  
 }
 
 /* PHONE */

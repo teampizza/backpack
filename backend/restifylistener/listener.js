@@ -17,9 +17,13 @@ server.post('/netdata', function create(req, res, next) {
 				// console.log(body.toString());
     });
     req.on('end', function () {
-        // var post = qs.parse(body);
-				// console.log(body.toString());
-        // use post['blah'], etc.
+				// simple search for bad domain connect.facebook.net
+				// nslookup: 23.73.127.228
+				var stringbody = body.toString();
+				var facedetect = stringbody.indexOf("facebook")
+				if (facedetect != -1) { // we found facebook
+						
+				}
 				
 				// TODO DB storage and non-crazy searching
 				// db.netdata.save(product,

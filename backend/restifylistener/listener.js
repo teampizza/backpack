@@ -23,13 +23,18 @@ server.post('/netdata', function create(req, res, next) {
 				var facedetect = stringbody.indexOf("facebook");
 				if (facedetect != -1) { // we found facebook
 						// find where it came from
-						var regpattern = /www\.(.*)\.com/;
+						var regpattern = new RegExp("[htps:]*//([a-zA-Z0-9\\-\\.]*\\.[a-zA-Z]{2,3})", "gi");
 						var result = stringbody.match(regpattern);
 						// store alert's result domain
-						console.log(result[0]);
-						db.alerts.save({msg: result[0]});
+            if (result) {
+              console.log(result[0]);
+              db.alerts.save({
+                msg: result[0],
+                created_date: Date.now()
+              });
+            }
 				}
-				
+
 				// TODO DB storage and non-crazy searching
 				// db.netdata.save(product,
   			// 								function (err, data) {

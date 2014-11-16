@@ -5,6 +5,20 @@
 /italics/
 *bold*
 
+* Who we are
+
+/Backpack is a tool for even the most novice internet user to educate themselves and regain control of thier online identity./
+
+* What we Beleive
+
+/Previously hidden data collection should be clearly provided to you, because this better understanding serves to protect you online./
+
+* Why Backpack?
+
+/Our integral goal is transparency, we capture more types of information than competitors, and the application is easily understood and interacted with./
+
+- we need to note and address competitors (ghostery: narrow, closed source, not as extensive) 
+
 * The problem:
 Free is not free. If you use a free service, you are not the consumer, you are the product.
 
@@ -27,9 +41,16 @@ This makes our users active participants in their online experience.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Main Ideas:So much information circulating around online. Some of this information is your personal identity. 
-- Problem: According to PEW, 60% of Americans would like to regain control of their information "quote from PEW"
-- Solution: User can actively monitor and engage with previously hidden information. This in turn builds a 
+Main Ideas:So much information circulating around online. Some of this information is your personal identity. You've heard the stories of Facebook and Dropbox privacy issues.
+These events happen so frequently that everyday people end up: 
+- surfing ignorantly
+- getting complacent and not caring
+- we think that's sad and we think people can have more control of their online identity than they currently do, and we have data to back this up (PEW data), users
+don't know how but the demand is there. Accrding to PEW, 60% of Americans would like to regain control of their online information, preferably through honest, 
+user friendly methods. So how do they do it?
+
+- Solution: Backpack presents previously hidden data collection clearly, and provides a user friendly platform to engage with thier outgoing information. It is a
+tool for even the most novice internet user to educate themselves and regain control of thier online identity.  
 common user literacy that prevents outcomes such as identity theft, viruses, and illegal seizure of personal information. 
 - Appeal: Know your identity on the internet before the internet knows your identity. Are you being disriminated against in advertising? 
 - Money: We make money with a freemium model, building recognition to eventually sell monitoring model to enterprises 
@@ -48,7 +69,7 @@ Free(open source or community) Product: Simple real-time Identity Monitoring
 
 
 
-	1. Social media/Business media tracking
+	1. Social media/Business media tracking: 
 	2. Data use tracking (for networks with datacaps)
 	3. Connection security monitoring (websites negligent in informing users of security vulnerabilities) 
 	4. GeoIP tracking 

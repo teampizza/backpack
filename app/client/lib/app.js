@@ -3,7 +3,18 @@ Session.setDefault("counter", 0);
 Template.hello.helpers({
   counter: function () {
     return Session.get("counter");
+  },
+  msg: function() {
+    console.log(this.msg);
+    return this.msg.split(',')[0];
   }
+});
+
+Template.feed.helpers({
+  alerts: function () {
+    return alertsCollection.find();
+  }
+
 });
 
 Template.hello.events({

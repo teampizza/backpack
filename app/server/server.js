@@ -1,6 +1,6 @@
 Meteor.methods({
   updateCount: function(count) {
-    AlertCollection.insert({
+    AlertsCollection.insert({
       'clicked' : count
     });
   }

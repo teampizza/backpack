@@ -19,16 +19,22 @@
 </header>
 
 <div id="body_container" class="clearfix">
-  {{> hello}}
+  {{> feed}}
 </div>
 
 </body>
+
+<template name="feed">
+  {{#each alerts}}
+    {{> hello}}
+  {{/each}}
+</template>
 
 <template name="hello">
   <section class="feed_content clearfix">
     <img src="http://placekitten.com/g/125/40" alt="backpack">
     <h3 class="report">Social Beacon</h3>
-    <p class="summary">Summary Report</p>
+    <p class="summary">{{msg}}</p>
     <div class="details">
       <p>Detail Report</p>
       <a class="advice" href="#">

@@ -68,28 +68,6 @@ body{
   margin-bottom: 25px;
 }
 
-#icon a{
-  text-decoration: none;
-  color: red;
-  background-size: 100%;
-  border: 2px solid orange;
-  padding: 3px 5px;
-}
-
-#icon a:hover{
-  color: orange;
-}
-
-#icon{
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  top: 20px;
-  right: 10px;
-}
-
 nav ul#main_nav{
   padding: 15px;
   background-color: #575457;
@@ -116,21 +94,17 @@ nav ul#main_nav{
   padding: 5px;
 }
 
-.body_content{
+.feed_content{
   text-align: left;
-  height: 115px;
   padding: 5px 0 0;
   margin: 25px auto;
-  background-color: #a4bcd6;
+  background-color: #575457;
   border: 3px solid gray;
   font-family: 'Lato', sans-serif;
+  max-width: 600px;
 }
 
-.body_content:hover{
-  border: 3px solid orange;
-}
-
-.visited img{
+.feed_content img{
   height: 60px;
   width: 60px;
   border-radius: 5px;
@@ -139,16 +113,13 @@ nav ul#main_nav{
   float: left;
 }
 
-.visited div.model{
+.feed_content div.report{
   margin-left: 93px;
   font-size: 30px;
+  color: #FFF;
 }
 
-.visited span.detail{
-  display: none;
-}
-
-.visited div.advise{
+.feed_content div.advice{
   margin-left: 93px;
   color: #a6a6a6;
   font-size: 15px;
@@ -157,18 +128,20 @@ nav ul#main_nav{
   width: 200px;
 }
 
+.feed_content .summary, .details .advice, .details p  {
+  color: #ddd;
+}
+
 #button{
   width: 100%;
   display: table;
   color: #fff;
-  margin-top: 40px;
-  border: 2px solid gray;
+  margin-top: 30px;
   box-sizing: border-box;
 }
 
 ul#button li{
   display: inline-block;
-  height: 20px;
   width: 33.333%;
   text-align: center;
   box-sizing: border-box;
@@ -182,11 +155,14 @@ ul#button li:last-child{
 #button a img{
   width: 15px;
   height: 15px;
+  margin-top: 10px;
 }
 
 #button a {
   width: 100%;
+  height: 35px;
   display: block;
+  background: #E4E4E4;
 }
 
 ul#button li:hover a{

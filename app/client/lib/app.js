@@ -18,13 +18,17 @@ Template.feed.helpers({
 });
 
 Template.hello.events({
-  'click .update': function () {
-    // increment the counter when button is clicked
-    Session.set("counter", Session.get("counter") + 1);
-  },
+  'click #button a': function (e, t) {
+    e.preventDefault();
+    var parentClass = $(e.target).parent().attr('class');
+    var reponse = 'no';
 
-  'click .submit': function () {
-    Meteor.call('updateCount', Session.get("counter"), function(error, result) {
+    if (parentClass == 'checkmark') {
+      reponse = 'yes';
+    }
+
+
+    Meteor.call('feedContentResponse', this._id, reponse, function(error, result) {
       console.log(result);
     });
   },

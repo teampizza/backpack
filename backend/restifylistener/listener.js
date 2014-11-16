@@ -20,9 +20,13 @@ server.post('/netdata', function create(req, res, next) {
 				// simple search for bad domain connect.facebook.net
 				// nslookup: 23.73.127.228
 				var stringbody = body.toString();
-				var facedetect = stringbody.indexOf("facebook")
+				var facedetect = stringbody.indexOf("facebook");
 				if (facedetect != -1) { // we found facebook
-						
+						// find where it came from
+						var regpattern = /www\.(.*)\.com/;
+						var result = stringbody.match(regpattern);
+						// console.log(result)
+						result[0]
 				}
 				
 				// TODO DB storage and non-crazy searching

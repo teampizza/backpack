@@ -1,0 +1,86 @@
+﻿Title: Backpack
+
+* The guardian angel on your shoulder
+
+**Team
+
+* Chief Developer: Trevor Alexander
+
+* Dev 1: Manny
+
+* Dev 2: Eun Joo
+
+* Project Manager: Tenga
+
+* Bus Dev: Denis
+
+* Bus Dev: Hayley
+
+** Problem
+
+* Lack of net-literacy leaves users' identity vulnerable.
+
+* Set it and forget it culture, changing passive user into an active consumer 
+
+** Solution
+
+* Offer a user friendly tool to notify users of dangerous internet habits and provide a solution to fix them.
+
+** Value Proposition
+
+* "60% of Americans are thinking about their online identity"
+
+- PEW Data
+
+* Survey Says: (insert pie chart images underneath)
+
+** Business Model
+
+* Freemium platform
+
+- (Denis's bus. model graphics inserted here)
+
+** Technology 
+
+* (Denis's tech. graphic inserted here)
+
+* UX is so understandable, your mom could use it
+
+** Marketing 
+
+* Target market according to PEW research
+
+- Adults 25-30
+
+- Annual income of more than $50,000
+
+* 1. First exposure comes from the open source community
+
+* 2. Hits main stream market after early adopters provide traction
+
+* 3. Continued use of product leads to purchase 
+
+** Next Steps 
+
+*  Build marketplace 
+
+* Develop advanced proprietary models
+
+
+** Financial
+
+* (Denis's Financial charts)
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 var restify = require('restify');
 var mongojs = require('mongojs');
 
-var db = mongojs.connect('localhost:27017/backpack');
-var alerts = db.collection('alerts');
+var db = mongojs.connect('localhost:27017/backpack', ['alerts']);
+// var alerts = db.collection('alerts');
 
 var server = restify.createServer({
 		name: 'backpacklistener',
@@ -27,12 +27,7 @@ server.post('/netdata', function create(req, res, next) {
 						var result = stringbody.match(regpattern);
 						// store alert's result domain
 						console.log(result[0]);
-						alerts.save(JSON.parse(result[0]),
-													function (err, data) {
-															console.log(err);
-															console.log(data);
-													});
-													 
+						db.alerts.save({msg: result[0]});
 				}
 				
 				// TODO DB storage and non-crazy searching

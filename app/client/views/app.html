@@ -1,0 +1,57 @@
+<head>
+  <title>BackPack</title>
+</head>
+
+<body>
+
+<header>
+  <div id="banner">
+    <h1 id="title">
+      <img alt="Backpack Logo" src="/images/bp-logo.png">
+    </h1>
+  </div>
+  <nav>
+    <ul id="main_nav">
+      <li class="nav_item"><a href="#">Feed</a> &middot; </li>
+      <li class="nav_item"><a href="#">Report</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div id="body_container" class="clearfix">
+  {{> hello}}
+</div>
+
+</body>
+
+<template name="hello">
+  <section class="feed_content clearfix">
+    <img src="http://placekitten.com/g/125/40" alt="backpack">
+    <h3 class="report">Social Beacon</h3>
+    <p class="summary">Summary Report</p>
+    <div class="details">
+      <p>Detail Report</p>
+      <a class="advice" href="#">
+        Advice Information etc........
+      </a>
+    </div>
+
+    <ul id="button">
+      <li class="checkmark">
+        <a href="#">
+          <img src="/images/checkmark.svg" alt="">
+        </a>
+      </li>
+      <li class="minus">
+        <a href="#">
+          <img src="/images/minus_new.svg" alt="">
+        </a>
+      </li>
+      <li class="xmark">
+        <a href="#">
+          <img src="/images/xmark.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </section>
+</template>

@@ -1,14 +1,16 @@
 #!/usr/bin/env python
-import pexpect
+import pexpect # runs shell pipe
 import json
+import requests # http reqs
 # from utils import * # our util functions
 
-### initialize socket client
-host = 'localhost'
-port = '3000'
-
-## Client code:
-## client = Client()
+### function: post some JSON
+## http://stackoverflow.com/a/18709228/2023432
+def postsomejson(somejson):
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+    url = 'http://127.0.0.1:3001'
+    r = requests.post(url, data=somejson, headers=headers)
+    return r
 
 ### function: count indent level of line
 ## http://stackoverflow.com/a/13241784/2023432
@@ -43,8 +45,8 @@ def parsepacket(packetstring):
     if len(packetlinesstripcolonflat) % 2 != 0:
         packetlinesstripcolonflat = packetlinesstripcolonflat + [" "]
 
-    ## 9. convert pairwise to dict
-    return dict(packetlinesstripcolonflat[i:i+2] for i in range(0, len(packetlinesstripcolonflat), 2))
+    ## 9. convert pairwise to dict, JSON
+    return json.dumps(dict(packetlinesstripcolonflat[i:i+2] for i in range(0, len(packetlinesstripcolonflat), 2)))
 
 ### Tshark opts of interest:
 ## -D: list capture interfaces
@@ -105,28 +107,21 @@ for nextline in child:
 
     nextline_level = indentation(nextline)
     if nextline_level == 0: # we reached a new packet
-        print lines,
+        # print lines,
 
         ## that means that `lines` has a whole packet of data
         ## parse lines and make a JSON blob
         nextjson = parsepacket(" ".join(lines))
 
-        ## send JSON blob through socket
-        # sendresult = socketsend(nextjson)
+        ## send JSON blob through HTTP
+        resp = postsomejson(nextjson)
+        
+        print resp.status_code # == requests.codes.ok
 
-        # if sendresult == True:
-            ## throw away old traffic
-        #    lines = []
+        # if resp.status_code == requests.codes.ok:
+        ## throw away old traffic
+        lines = []
+
+        # print nextjson
 
 child.close()
-
-
-
-
-### function: send JSON blob over socket
-def socketsend(jsonblob):
-    client.connect(host, port).send(jsonblob)
-    response = client.recv()
-    client.close()
-    return response
-

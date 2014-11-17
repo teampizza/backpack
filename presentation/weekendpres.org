@@ -24,29 +24,26 @@
 #+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
 #+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
 
-* The guardian angel on your shoulders
-
+* You got your back
 * Problem
 
 - Lack of information literacy leaves users' identities vulnerable
-
 - 'Set it and forget culture' is changing, but users need a guide
 
 #+ATTR_HTML: :style height: 300px
 [[./Slide09.png]]
 * Solution
-- Offer a user friendly tool to notify users of dangerous internet habits and provide a solution to fix them
-** Value Proposition
 
 - Seamlessly show the everyday person what identity info they give up
 - Empower them to take back control of their information
-
 
 ** Technology
 
 [[./Slide05.png]]
 
 - UX so understandable, your mom can use it
+
+# demo
 
 ** Team
 
@@ -59,16 +56,8 @@
 
 ** Business Model
 
-#+ATTR_HTML: :style height: 300px
-- Freemium
-
+#+ATTR_HTML: :style height: 600px
 [[./Slide06.png]]
-
-** Launch Strategy
-
-- Initial exposure from open source/security community
-- Hit mainstream after early adopters provide traction
-- Continued product use leads to purchase
 
 ** Target Market
 
@@ -79,11 +68,33 @@
 - Online shops
 - Startups
 
-* Next Steps
-1. Build marketplace to sell detection models
-2. Increase detection coverage
-3. Develop advanced proprietary models
-4. Mobile device port
+** Launch Strategy
+
+1. 25K will go to targeted marketing (25mil emails)
+2. Convert to free users
+3. Hit mainstream after early adopters provide traction
+4. Continued product use leads to purchase
+
+* 
+# development plan
+# 1. Build marketplace to sell detection models
+# 2. Increase detection coverage
+# 3. Develop advanced proprietary models
+# 4. Mobile device port
+
+The culture is changing...
+
+# ATTR_HTML: :style height: 300px
+#+ATTR_HTML: :style z-index: -1 height: 150px 
+# position: absolute; top: -50%; left: -70%"
+[[./backpack_horz_logolight.png]]
+
+* Reach Us
+
+- github: https://github.com/talexand/backpack
+- web: http://www.getbackpack.co/
+- email: mailto:talex@privatdemail.net
+
 * Financials
 
 - Freemium model
@@ -92,7 +103,7 @@
 - Breakeven point: 5K customers, $0.5 million in sales
 # - Conversion: 5%
 
-<br>
-<br>
+#+HTML: <br>
+#+HTML: <br>
 Required seed: $0.5 million
 

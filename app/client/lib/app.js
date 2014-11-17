@@ -1,3 +1,9 @@
+Template.feed.helpers({
+  alerts: function () {
+    return alertsCollection.find({}, {sort: {created_date: -1}});
+  }
+});
+
 Template.hello.helpers({
   msg: function() {
     return this.msg.replace('//', '');
@@ -10,13 +16,6 @@ Template.hello.helpers({
       return 'red';
     }
   }
-});
-
-Template.feed.helpers({
-  alerts: function () {
-    return alertsCollection.find({}, {sort: {created_date: -1}});
-  }
-
 });
 
 Template.hello.events({

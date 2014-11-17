@@ -104,6 +104,8 @@ nav ul#main_nav{
   max-width: 600px;
   box-shadow: 0 0 7px 1px rgba(0,0,0,0.3);
   box-sizing: border-box;
+  -webkit-animation: fadeIn 0.5s 0.2s;
+  animation: fadeIn 0.5s 0.2s;
 }
 
 .feed_content.red {
@@ -126,6 +128,7 @@ nav ul#main_nav{
   margin-left: 93px;
   font-size: 30px;
   color: #FFF;
+  cursor: pointer;
 }
 
 .feed_content div.advice{
@@ -203,4 +206,17 @@ ul#button li:last-child{
 
 ul#button li:hover a{
   background: rgba(255, 255, 255, 1);
+}
+
+.faded-out {
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

@@ -1,35 +1,94 @@
-﻿** Problem
+﻿#+LAST_MOBILE_CHANGE: 2014-10-01 16:40:07
+#+TITLE: 
+#+DATE: Startup Weekend 2014 Honolulu
+#+AUTHOR: 
+#+EMAIL: 
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.3.1 (Org mode 8.2.7c)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: fade
+#+REVEAL_MATHJAX: true
+# OPTIONS: org-reveal-mathjax:t
+#+OPTIONS: reveal_controls:nil
+# REVEAL_EXTRA_CSS: /home/sobakasu/unisync/tools/reveal.css
+# <img src="./hicap_logo.svg" style="z-index: -1"></img>
 
-- 60% of Americans are thinking about their online identity
+#+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
+#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -50%; left: 10%"></img></div>
 
-- People unknowingly share their personal information with unsecured sites, lack of net-literacy leaves users' identity vulnerable.
+* The guardian angel on your shoulders
+** Team
 
-** Solution
+- Dev Lead: Trevor Alexander
+- Backend/Frontend Dev: Emmanuel Pilande
+- Frontend Dev: Eun Joo Lee
+- QA/Product Manager: Matt Tengasantos
+- Business Dev: Denis Melnik
+- Business Dev: Hayley Everett
 
-- We provide a Offer a user friendly product that notifies users of dangerous internet habits and provides simple tools to fix the problem.
+* Problem
 
-** Why are we the best?
+- Lack of information literacy leaves users' identities vulnerable
 
-- Educate the user 
+- 'Set it and forget culture' is changing, but users need a guide
 
-- Cap service at $9
+* Solution
 
-- Real-time monitoring
+- Offer a user friendly tool to notify users of dangerous internet habits and provide a solution to fix them
 
-- No other product like this
+** Value Proposition
 
-** Why care?
+- Pew Research: 60% of Americans want to get control of their online information
 
-- Virus, identity theft, targeted advertising, easy to prevent, hard to clean-up
+# survey image: pie charts
 
-- Create the identity you want, without a machine deciding for you
+** Business Model
 
-** How are we successful?
+# Denis biz graphic
 
-- By having people download our application, we are creating a literate public, this consequntally turns users into customers as they come to realize how much of their identity information should be protected.
+** Technology
 
-** Target audience
+# Denis tech graphic
 
-*
+- UX so understandable, your mom can use it
+
+** Target Market
+
+- Adults 25-30
+- Income > $50,000
+- Entrepreneurs
+- Small business
+- Online shops
+- Startups
+
+** Launch Strategy
+
+- Initial exposure from open source/security community
+- Hit mainstream after early adopters provide traction
+- Continued product use leads to purchase
+
+** Financials
+
+- Freemium model
+- $9 monthly premium subscription (advanced detection)
+- Breakeven in 1.5 years
+- Breakeven point: 5K customers, $0.5 million in sales
+# - Conversion: 5%
+- Required seed: $0.5 million
 
 
+
+* Next Steps
+
+1. Build marketplace to sell detection models
+2. Increase detection coverage
+3. Develop advanced proprietary models
+4. Mobile device port

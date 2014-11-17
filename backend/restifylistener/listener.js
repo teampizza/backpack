@@ -35,14 +35,14 @@ server.post('/netdata', function create(req, res, next) {
             }
 				}
 
-				// TODO DB storage and non-crazy searching
-				// db.netdata.save(product,
-  			// 								function (err, data) {
-  			// 										res.writeHead(200, {
-  			// 												'Content-Type': 'application/json; charset=utf-8'
-  			// 										});
-  			// 										res.end(JSON.stringify(data));
-  			// 								});
+        // TODO DB storage and non-crazy searching
+        // db.netdata.save(product,
+        // 								function (err, data) {
+        // 										res.writeHead(200, {
+        // 												'Content-Type': 'application/json; charset=utf-8'
+        // 										});
+        // 										res.end(JSON.stringify(data));
+        // 								});
     });
 		res.end('AAAAAAAAAAAAA');
 });

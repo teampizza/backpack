@@ -31,14 +31,16 @@
 </template>
 
 <template name="hello">
-  <section class="feed_content clearfix">
-    <img src="http://placekitten.com/g/125/40" alt="backpack">
+  <section class="feed_content clearfix {{status}}">
+    <img class="feed-icon" src="/images/bp-icon.png" alt="backpack">
     <h3 class="report">Social Beacon</h3>
     <p class="summary">{{msg}}</p>
     <div class="details">
-      <p>Detail Report</p>
+      <p>
+        Nulla luctus eros rhoncus dignissim maximus. Pellentesque pellentesque, nunc ac fringilla maximus, lorem risus porttitor velit, vel auctor leo mi at lectus. Integer dapibus lectus non sapien facilisis mattis. Vestibulum ullamcorper luctus ligula at sollicitudin.
+      </p>
       <a class="advice" href="#">
-        Advice Information etc........
+        How to fix >
       </a>
     </div>
 
@@ -46,11 +48,6 @@
       <li class="checkmark">
         <a href="#">
           <img src="/images/checkmark.svg" alt="">
-        </a>
-      </li>
-      <li class="minus">
-        <a href="#">
-          <img src="/images/minus_new.svg" alt="">
         </a>
       </li>
       <li class="xmark">

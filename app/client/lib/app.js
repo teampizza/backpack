@@ -1,12 +1,14 @@
-Session.setDefault("counter", 0);
-
 Template.hello.helpers({
-  counter: function () {
-    return Session.get("counter");
-  },
   msg: function() {
-    console.log(this.msg);
-    return this.msg.split(',')[0];
+    return this.msg.replace('//', '');
+  },
+
+  status: function() {
+    if (this.status == 'yes') {
+      return 'green';
+    } else {
+      return 'red';
+    }
   }
 });
 
@@ -27,9 +29,13 @@ Template.hello.events({
       reponse = 'yes';
     }
 
-
     Meteor.call('feedContentResponse', this._id, reponse, function(error, result) {
       console.log(result);
     });
   },
+
+  'click .report': function(e, t) {
+    e.preventDefault();
+    $(e.target).siblings('.details').slideToggle();
+  }
 });

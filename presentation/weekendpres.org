@@ -21,8 +21,8 @@
 # REVEAL_EXTRA_CSS: /home/sobakasu/unisync/tools/reveal.css
 # <img src="./hicap_logo.svg" style="z-index: -1"></img>
 
+#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
 #+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
-#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -50%; left: 10%"></img></div>
 
 * The guardian angel on your shoulders
 ** Team
@@ -46,17 +46,22 @@
 
 ** Value Proposition
 
-- Pew Research: 60% of Americans want to get control of their online information
+- Seamlessly show the everyday person what identity info they give up
+- Empower them to take back control of their information
 
-# survey image: pie charts
+#+ATTR_HTML: :style height: 300px
+[[./Slide09.png]]
 
 ** Business Model
 
-# Denis biz graphic
+#+ATTR_HTML: :style height: 300px
+- Freemium
+
+[[./Slide06.png]]
 
 ** Technology
 
-# Denis tech graphic
+[[./Slide05.png]]
 
 - UX so understandable, your mom can use it
 

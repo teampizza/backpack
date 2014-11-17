@@ -25,6 +25,29 @@
 #+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
 
 * The guardian angel on your shoulders
+
+* Problem
+
+- Lack of information literacy leaves users' identities vulnerable
+
+- 'Set it and forget culture' is changing, but users need a guide
+
+#+ATTR_HTML: :style height: 300px
+[[./Slide09.png]]
+* Solution
+- Offer a user friendly tool to notify users of dangerous internet habits and provide a solution to fix them
+** Value Proposition
+
+- Seamlessly show the everyday person what identity info they give up
+- Empower them to take back control of their information
+
+
+** Technology
+
+[[./Slide05.png]]
+
+- UX so understandable, your mom can use it
+
 ** Team
 
 - Dev Lead: Trevor Alexander
@@ -34,24 +57,6 @@
 - Business Dev: Denis Melnik
 - Business Dev: Hayley Everett
 
-* Problem
-
-- Lack of information literacy leaves users' identities vulnerable
-
-- 'Set it and forget culture' is changing, but users need a guide
-
-* Solution
-
-- Offer a user friendly tool to notify users of dangerous internet habits and provide a solution to fix them
-
-** Value Proposition
-
-- Seamlessly show the everyday person what identity info they give up
-- Empower them to take back control of their information
-
-#+ATTR_HTML: :style height: 300px
-[[./Slide09.png]]
-
 ** Business Model
 
 #+ATTR_HTML: :style height: 300px
@@ -59,11 +64,11 @@
 
 [[./Slide06.png]]
 
-** Technology
+** Launch Strategy
 
-[[./Slide05.png]]
-
-- UX so understandable, your mom can use it
+- Initial exposure from open source/security community
+- Hit mainstream after early adopters provide traction
+- Continued product use leads to purchase
 
 ** Target Market
 
@@ -74,26 +79,20 @@
 - Online shops
 - Startups
 
-** Launch Strategy
-
-- Initial exposure from open source/security community
-- Hit mainstream after early adopters provide traction
-- Continued product use leads to purchase
-
-** Financials
+* Next Steps
+1. Build marketplace to sell detection models
+2. Increase detection coverage
+3. Develop advanced proprietary models
+4. Mobile device port
+* Financials
 
 - Freemium model
 - $9 monthly premium subscription (advanced detection)
 - Breakeven in 1.5 years
 - Breakeven point: 5K customers, $0.5 million in sales
 # - Conversion: 5%
-- Required seed: $0.5 million
 
+<br>
+<br>
+Required seed: $0.5 million
 
-
-* Next Steps
-
-1. Build marketplace to sell detection models
-2. Increase detection coverage
-3. Develop advanced proprietary models
-4. Mobile device port

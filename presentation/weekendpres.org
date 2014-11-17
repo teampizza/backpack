@@ -24,7 +24,6 @@
 #+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
 #+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
 
-* You got your back
 * Problem
 
 - Lack of information literacy leaves users' identities vulnerable
@@ -32,6 +31,7 @@
 
 #+ATTR_HTML: :style height: 300px
 [[./Slide09.png]]
+* You got your back
 * Solution
 
 - Seamlessly show the everyday person what identity info they give up

@@ -1,0 +1,109 @@
+﻿#+LAST_MOBILE_CHANGE: 2014-10-01 16:40:07
+#+TITLE: 
+#+DATE: Startup Weekend 2014 Honolulu
+#+AUTHOR: 
+#+EMAIL: 
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.3.1 (Org mode 8.2.7c)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: fade
+#+REVEAL_MATHJAX: true
+# OPTIONS: org-reveal-mathjax:t
+#+OPTIONS: reveal_controls:nil
+# REVEAL_EXTRA_CSS: /home/sobakasu/unisync/tools/reveal.css
+# <img src="./hicap_logo.svg" style="z-index: -1"></img>
+
+#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
+#+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
+
+* Problem
+
+- Lack of information literacy leaves users' identities vulnerable
+- 'Set it and forget culture' is changing, but users need a guide
+
+#+ATTR_HTML: :style height: 300px
+[[./Slide09.png]]
+* You got your back
+* Solution
+
+- Seamlessly show the everyday person what identity info they give up
+- Empower them to take back control of their information
+
+** Technology
+
+[[./Slide05.png]]
+
+- UX so understandable, your mom can use it
+
+# demo
+
+** Team
+
+- Dev Lead: Trevor Alexander
+- Backend/Frontend Dev: Emmanuel Pilande
+- Frontend Dev: Eun Joo Lee
+- QA/Product Manager: Matt Tengasantos
+- Business Dev: Denis Melnik
+- Business Dev: Hayley Everett
+
+** Business Model
+
+#+ATTR_HTML: :style height: 600px
+[[./Slide06.png]]
+
+** Target Market
+
+- Adults 25-30
+- Income > $50,000
+- Entrepreneurs
+- Small business
+- Online shops
+- Startups
+
+** Launch Strategy
+
+1. 25K will go to targeted marketing (25mil emails)
+2. Convert to free users
+3. Hit mainstream after early adopters provide traction
+4. Continued product use leads to purchase
+
+* 
+# development plan
+# 1. Build marketplace to sell detection models
+# 2. Increase detection coverage
+# 3. Develop advanced proprietary models
+# 4. Mobile device port
+
+The culture is changing...
+
+# ATTR_HTML: :style height: 300px
+#+ATTR_HTML: :style z-index: -1 height: 150px 
+# position: absolute; top: -50%; left: -70%"
+[[./backpack_horz_logolight.png]]
+
+* Reach Us
+
+- github: https://github.com/talexand/backpack
+- web: http://www.getbackpack.co/
+- email: mailto:talex@privatdemail.net
+
+* Financials
+
+- Freemium model
+- $9 monthly premium subscription (advanced detection)
+- Breakeven in 1.5 years
+- Breakeven point: 5K customers, $0.5 million in sales
+# - Conversion: 5%
+
+#+HTML: <br>
+#+HTML: <br>
+Required seed: $0.5 million
+

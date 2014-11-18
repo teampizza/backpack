@@ -8,7 +8,7 @@ import requests # http reqs
 ## http://stackoverflow.com/a/18709228/2023432
 def postsomejson(somejson):
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
-    url = 'http://localhost:3001/netdata' # POST to netdata route
+    url = 'http://localhost:3002/netdata' # POST to netdata route
     r = requests.post(url, data=somejson, headers=headers)
     return r
 
@@ -87,7 +87,7 @@ lines = []
 ## TODO later on we will want to get field spec from models at startup
 ## TODO is -t e redundant? seems like it maybe only works on summary
 tsharkopts = "-V -l -p -t e"
-tsharkinterface = "-i en1"
+tsharkinterface = "-i wlan0"
 
 ## start tshark process
 ## http://stackoverflow.com/a/20509641/2023432

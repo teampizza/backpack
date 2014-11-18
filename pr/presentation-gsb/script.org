@@ -1,0 +1,64 @@
+#+TITLE: Global Startup Battle pitch script
+#+DATE: <2014-11-18 火>
+#+AUTHOR: Team Pizza
+#+EMAIL: talex@privatdemail.net
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+CREATOR: Emacs 24.3.1 (Org mode 8.2.7c)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+* outline
+** scene
+- static shot, one chair behind desk at left, white wall behind.
+- Frame at head height.
+- White shoebox or equivalent on desk at left, top open.
+
+** script
+1. Speaker enters from right, puts backpack on table, opens it. Faces camera at 3/4.
+	 1. Speaker: We carry around pieces of us everywhere.
+2. Speaker removes the following objects from backpack, placing them on table.
+	 1. Wallet
+			1. Speaker: Our identity, our money...
+	 2. Keys
+			1. Speaker: Access to our homes...
+	 3. Pill bottle
+			1. Speaker: Our medical status...
+	 4. Smartphone
+			1. Speaker: Our memories...
+	 5. Laptop
+			1. Speaker: Some would say our whole lives.
+3. Speaker: It's no different on the Internet.
+4. NSA enters from left, quietly sits in chair. NSA is wearing 'NSA' logo baseball cap.
+5. Speaker begins to remove small boxes with white paper labels from backpack, placing them on table as before. NSA takes each of them a second after Speaker places them.
+	 1. Browser history
+			1. Speaker: What we read...
+	 2. Personal communication
+			1. Speaker: The moments we share...
+	 3. Location
+			1. Speaker: Where we are...
+	 4. Gender
+	 5. Sexuality
+			1. Speaker: Who we are...
+	 6. Religion
+			1. Speaker: What we believe.
+6. Speaker: You should be the one in control of where these pieces go, not businesses or governments. You have the right to be who you want to be, on the Internet or otherwise. We give you the knowledge and power to make it happen.
+7. Fade to screencap of *backpack* app.
+	 1. Speaker (voiceover): Our app, *backpack*, detects information leaks right when they happen, and explains what's happening in a simple, understandable way.
+	 2. Speaker (voiceover): You decide whether or not you're okay with that information going out. If you want to stop it, we explain how.
+8. Fade back to desk scene. Speaker addresses judges with product information.
+	 1. Speaker: Over the weekend we've built a functioning alpha that detects and notifies users of Facebook share button tracking. It runs on Windows, MacOS, and Linux laptops and desktops.
+	 2. Speaker: We've engaged with over 30? potential users and received positive feedback and definite interest. Nationwide, Pew Research reports we have an initial market cap of 73 million Americans.
+	 3. Speaker: Since our app runs locally to protect user information, scaling is no effort.
+	 4. Speaker: Our closest competitors only look at cookies and domain names--our modular detection system and open-source base product take a powerful general approach to analyzing network traffic that surpasses them.
+	 5. Speaker: We plan to sell under a freemium model. Simple, easy detection modules will be available to the community, while advanced modules will be provided on a subscription or one-off fee basis.
+9. Speaker gives closing lines.
+	 1. Speaker: Identity management and info literacy are no longer optional on the Internet, and users have said they're ready. *backpack* meets that demand, empowering them to take control.
+10. Speaker looks down at NSA. They stare at each other for 1s.
+11. Fade to white text on black: *backpack* logo, URL, single text line: '_you_ got your back'.
+		1. Speaker: Take control of your identity. Get *backpack*.

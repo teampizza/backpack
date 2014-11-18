@@ -5,3 +5,5 @@ build/
 packages/
 .meteor/
 app/dump/
+
+*~

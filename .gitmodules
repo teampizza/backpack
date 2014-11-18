@@ -1,0 +1,3 @@
+[submodule "submodules/jsonsocket"]
+	path = submodules/jsonsocket
+	url = https://github.com/mdebbar/jsonsocket.git

@@ -60,5 +60,5 @@
 9. *Speaker* gives closing lines.
 	 1. *Speaker*: Identity management and info literacy are no longer optional on the Internet, and users have said they're ready. *backpack* meets that demand, empowering them to take control.
 10. *Speaker* looks down at *NSA*. They stare at each other for 1s.
-11. Fade to white text on black: *backpack* logo, URL, single text line: '_you_ got your back'.
+11. Fade to white text on black: *backpack* logo, URL, single text line: ' _you_ got your back'.
 		1. *Speaker*: Take control of your identity. Get *backpack*.

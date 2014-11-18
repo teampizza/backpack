@@ -1,7 +1,7 @@
 social beacon (draft)
 ========
 
-social moths to the social flame
+social butterflies to the flame
 
 ## model description
 
@@ -11,7 +11,7 @@ This model looks for traffic going to known social widget domains. Most of these
 
 ### alert conditions
 
-If a beacon providing domain/IP is queried, an alert is triggered.
+Model alerts on any traffic sent to the above domains.
 
 ## report layout
 

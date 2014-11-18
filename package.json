@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "mongojs": "^0.17.0",
-    "restify": "^2.8.3"
-  }
-}

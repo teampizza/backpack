@@ -1,0 +1,40 @@
+* rough
+- [ ] self intro
+	- [ ] roles
+		- [ ] MS student, UH EE (BCI)
+		- [ ] Member UH EE Student Advisory Board
+		- [ ] UH divestment campaign tech asst
+		- [ ] HICapacity student liaison
+		- [ ] freelance Japanese translator
+		- [ ] now head of Team Pizza
+- [ ] overview
+- [ ] code walkthrough
+- [ ] jokes
+	- [ ] most hilarious commit messages
+	- [ ] human bonding
+		- separation anxiety
+			- actually missed team members on monday
+			- expect to see them every 4 hours
+- [ ] reflections
+	- [ ] what is a 'developer'
+		- [ ] 'only team with a developer leading the project'
+	- [ ] advice
+		- [ ] write the algorithm first (ffs)
+		- [ ] write the shittiest code you can that works ok
+	- [ ] thanks
+		- [ ] suddenly thanking a lot of people as this process goes on
+		- [ ] team that bought into the idea
+			- [ ] I had nothing to worry about
+			- [ ] everyone so professional and driven
+		- [ ] coaches
+			- [ ] especially devleague+sudokrew
+		- [ ] volunteers+organizers
+		- [ ] hicapacity
+			- [ ] formative, supportive environment
+			- [ ] magical superpowers
+			- [ ] noah for video production
+			- [ ] jesse for putting up with my bitchiness during video edit
+- [ ] voting beg
+	- https://vimeo.com/112257183
+* quick facts
+** fitbit data+analytics company as expert witness in Canada

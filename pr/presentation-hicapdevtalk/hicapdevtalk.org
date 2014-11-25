@@ -1,12 +1,38 @@
+#+LAST_MOBILE_CHANGE: 2014-10-01 16:40:07
+#+TITLE: 
+#+DATE: 
+#+AUTHOR: 
+#+EMAIL: 
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:t p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.3.1 (Org mode 8.2.7c)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: fade
+#+REVEAL_MATHJAX: true
+# OPTIONS: org-reveal-mathjax:t
+#+OPTIONS: reveal_controls:nil
+# REVEAL_EXTRA_CSS: /home/sobakasu/unisync/tools/reveal.css
+# <img src="./hicap_logo.svg" style="z-index: -1"></img>
+
+#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
+#+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
+
 * rough
-- [ ] self intro
-	- [ ] roles
-		- [ ] MS student, UH EE (BCI)
-		- [ ] Member UH EE Student Advisory Board
-		- [ ] UH divestment campaign tech asst
-		- [ ] HICapacity student liaison
-		- [ ] freelance Japanese translator
-		- [ ] now head of Team Pizza
+- [X] self intro
+	- [X] roles
+		- [X] MS student, UH EE (BCI)
+		- [X] Member UH EE Student Advisory Board
+		- [X] UH divestment campaign tech asst
+		- [X] HICapacity student liaison
+		- [X] freelance Japanese translator
+		- [X] now head of Team Pizza
 - [ ] overview
 - [ ] code walkthrough
 - [ ] jokes
@@ -38,3 +64,23 @@
 	- https://vimeo.com/112257183
 * quick facts
 ** fitbit data+analytics company as expert witness in Canada
+* Me
+- MS student at UH EE
+	- thesis topic: data processing and machine learning for brain-computer interfaces
+- Member UH EE Student Advisory Board
+- UH divestment campaign technical assistant
+- HI Capacity Student Liaison
+- freelance Japanese translator
+** Team Pizza
+# pizzacat image here
+- Lead Developer
+* backpack
+** overview
+- whats it do
+** stats
+- First alpha/POC over Startup Weekend
+- Cumulative lines:
+- Hours/person: ~40
+- 250 lines/hour
+
+# gitstats activity image here

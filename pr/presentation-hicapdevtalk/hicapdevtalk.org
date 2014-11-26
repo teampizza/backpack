@@ -1,7 +1,7 @@
 #+LAST_MOBILE_CHANGE: 2014-10-01 16:40:07
-#+TITLE: 
+#+TITLE: backpack dev talk
 #+DATE: 
-#+AUTHOR: 
+#+AUTHOR: trevor alexander
 #+EMAIL: 
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
 #+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
@@ -33,7 +33,8 @@
 - freelance Japanese translator
 ** Team Pizza
 # pizzacat image here
-# ATTR_HTML
+
+#+ATTR_HTML: :style height: 500px
 [[./pizzacat.jpg]]
 - Lead Developer
 * backpack
@@ -48,21 +49,24 @@
 # fitbit data used in canadian court
 # private robots patrolling SF businesses
 # "rape sufferers" database
-# target detecting pregnancy and sending appropriate ads
+# target retail detecting pregnancy and sending appropriate ads
 # compulsive gambling seniors database
 # no fly lists
 ** stats
-- First alpha/POC over Startup Weekend
-- Cumulative lines: 
+- First alpha/POC over Startup Weekend (v0.1)
+- Cumulative lines: 11625 (mostly binaries lol)
 - Hours/person: ~40
-- 250 lines/hour (among two coders)
+- 250 lines/hour (divided among 3 committers)
 
 # gitstats activity image here
+#+ATTR_HTML: :style height: 400px
 [[./hour_of_day.png]]
 ** program structure
-# latex flowchart?
+# flowchart
 
 [[./Slide05.png]]
+
+- flow: parse traffic → test with modular models → alert+guide user
 
 * thanks
 # selfish enterprise yet so many to thank
@@ -77,14 +81,16 @@
 	- noah: pro video production
 	- jesse: puts up with my bullshit
 
-thank-you post at: https://www.hitono.info/eng/2014/11/17/you-got-your-back.html
+full post at: https://www.hitono.info/backpackthanks
 * reflections
 ** 
 - write the algorithm first
 - *but* write the shittiest code you can
+#+ATTR_HTML: :style height: 550px
+[[./badcommits1.png]]
 ** 
 - developers (developers (developers))
-	- D: "only one of two teams led by a developer"
+- D: "only one of two teams led by a developer"
 # who dat
 
 # sweaty ballmer image here
@@ -93,60 +99,18 @@ thank-you post at: https://www.hitono.info/eng/2014/11/17/you-got-your-back.html
 - please vote for us *tomorrow*: https://vimeo.com/112257183
 - we're a community project: come fight the good fight at [[https://github.com/teampizza/backpack][github.com/teampizza/backpack]]
 * code (review)
+#+ATTR_HTML: :style height: 550px
+[[./badcommits2.png]]
 ** parser
 # go to code here
+
+
+
 ** listener hellJSON
 # go to code here
 # insane commit messages
 
 # image of satan goat (jacobs?)
 - hi jason (hail satan)
-[[./jacobsheep.png]]
+[[./jacobsheep.jpg]]
 
-* Archive																														:ARCHIVE:
-** rough
-	 :PROPERTIES:
-	 :ARCHIVE_TIME: 2014-11-24 月 21:49
-	 :END:
-- [X] self intro
-	- [X] roles
-		- [X] MS student, UH EE (BCI)
-		- [X] Member UH EE Student Advisory Board
-		- [X] UH divestment campaign tech asst
-		- [X] HICapacity student liaison
-		- [X] freelance Japanese translator
-		- [X] now head of Team Pizza
-- [X] overview
-- [X] code walkthrough
-- [X] jokes
-	- [X] most hilarious commit messages
-	- [X] human bonding
-		- separation anxiety
-			- actually missed team members on monday
-			- expect to see them every 4 hours
-- [X] reflections
-	- [X] what is a 'developer'
-		- [X] 'only team with a developer leading the project'
-	- [X] advice
-		- [X] write the algorithm first (ffs)
-		- [X] write the shittiest code you can that works ok
-	- [X] thanks
-		- [X] suddenly thanking a lot of people as this process goes on
-		- [X] team that bought into the idea
-			- [X] I had nothing to worry about
-			- [X] everyone so professional and driven
-		- [X] coaches
-			- [X] especially devleague+sudokrew
-		- [X] volunteers+organizers
-		- [X] hicapacity
-			- [X] formative, supportive environment
-			- [X] magical superpowers
-			- [X] noah for video production
-			- [X] jesse for putting up with my bitchiness during video edit
-- [X] voting beg
-	- https://vimeo.com/112257183
-** quick facts
-	 :PROPERTIES:
-	 :ARCHIVE_TIME: 2014-11-24 月 21:50
-	 :END:
-*** fitbit data+analytics company as expert witness in Canada

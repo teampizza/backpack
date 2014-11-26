@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>backpack dev talk</title>
+<meta name="author" content="(trevor alexander)"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/reveal.min.css"/>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.5.0/css/theme/night.css" id="theme"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/2.5.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section>
+<h1>backpack dev talk</h1>
+<h2>trevor alexander</h2>
+<h2><a href="mailto:"></a></h2>
+<h2></h2></section>
+
+<section>
+<section id="sec-1" >
+
+<h2>Me</h2>
+<ul class="org-ul">
+<li>MS student at UH (EE)
+<ul class="org-ul">
+<li>thesis topic: data processing and machine learning for brain-computer interfaces
+</li>
+</ul>
+</li>
+<li>Member UH EE Student Advisory Board
+</li>
+<li>UH divestment campaign technical assistant
+</li>
+<li>HI Capacity Student Liaison
+</li>
+<li>freelance Japanese translator
+</li>
+</ul>
+</section>
+<section id="sec-1-1" >
+
+<h3>Team Pizza</h3>
+<p>
+<img src="./pizzacat.jpg" alt="pizzacat.jpg" style="height: 500px" />
+</p>
+<ul class="org-ul">
+<li>Lead Developer
+</li>
+</ul>
+</section>
+</section>
+<section>
+<section id="sec-2" >
+
+<h2>backpack</h2>
+</section>
+<section id="sec-2-1" >
+
+<h3>overview</h3>
+<ul class="org-ul">
+<li>'identity introspection'
+<ul class="org-ul">
+<li>what do you look like to the internet?
+</li>
+<li><b>identity is a payload</b> that you carry with you
+</li>
+</ul>
+</li>
+<li>'identity' not 'privacy'
+<ul class="org-ul">
+<li>Privacy is up to the <b>user</b>: we won't tell you what to do
+</li>
+<li>everyone's got identities&#x2013;you should be allowed to decide what yours are
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sec-2-2" >
+
+<h3>stats</h3>
+<ul class="org-ul">
+<li>First alpha/POC over Startup Weekend (v0.1)
+</li>
+<li>Cumulative lines: 11625 (mostly binaries lol)
+</li>
+<li>Hours/person: ~40
+</li>
+<li>250 lines/hour (divided among 3 committers)
+</li>
+</ul>
+
+<p>
+<img src="./hour_of_day.png" alt="hour_of_day.png" style="height: 400px" />
+</p>
+</section>
+<section id="sec-2-3" >
+
+<h3>program structure</h3>
+<p>
+<img src="./Slide05.png" alt="Slide05.png" />
+</p>
+
+<ul class="org-ul">
+<li>flow: parse traffic → test with modular models → alert+guide user
+</li>
+</ul>
+</section>
+
+</section>
+<section>
+<section id="sec-3" >
+
+<h2>thanks</h2>
+<ul class="org-ul">
+<li>professional driven team
+<ul class="org-ul">
+<li>bought into the idea (why)
+</li>
+</ul>
+</li>
+</ul>
+<ul class="org-ul">
+<li>coaches: especially devleague + sudokrew
+</li>
+<li>startup weekend organizers and volunteers
+</li>
+<li>hi capacity
+<ul class="org-ul">
+<li>formative environment
+</li>
+<li>superpowers
+</li>
+<li>noah: pro video production
+</li>
+<li>jesse: puts up with my bullshit
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+full post at: <a href="https://www.hitono.info/backpackthanks">https://www.hitono.info/backpackthanks</a>
+</p>
+</section>
+</section>
+<section>
+<section id="sec-4" >
+
+<h2>reflections</h2>
+</section>
+<section id="sec-4-1" >
+
+<h3></h3>
+<ul class="org-ul">
+<li>write the algorithm first
+</li>
+<li><b>but</b> write the shittiest code you can
+</li>
+</ul>
+<p>
+<img src="./badcommits1.png" alt="badcommits1.png" style="height: 550px" />
+</p>
+</section>
+<section id="sec-4-2" >
+
+<h3></h3>
+<ul class="org-ul">
+<li>developers (developers (developers))
+</li>
+<li>D: "only one of two teams led by a developer"
+</li>
+</ul>
+<p>
+<img src="./ballmer.jpg" alt="ballmer.jpg" />
+</p>
+</section>
+</section>
+<section>
+<section id="sec-5" >
+
+<h2>some asks</h2>
+<ul class="org-ul">
+<li>please vote for us <b>tomorrow</b>: <a href="https://vimeo.com/112257183">https://vimeo.com/112257183</a>
+</li>
+<li>we're a community project: come fight the good fight at <a href="https://github.com/teampizza/backpack">github.com/teampizza/backpack</a>
+</li>
+</ul>
+</section>
+</section>
+<section>
+<section id="sec-6" >
+
+<h2>code (review)</h2>
+<p>
+<img src="./badcommits2.png" alt="badcommits2.png" style="height: 550px" />
+</p>
+</section>
+<section id="sec-6-1" >
+
+<h3>parser</h3>
+
+
+
+</section>
+<section id="sec-6-2" >
+
+<h3>listener hellJSON</h3>
+<ul class="org-ul">
+<li>hi jason (hail satan)
+</li>
+</ul>
+<p>
+<img src="./jacobsheep.jpg" alt="jacobsheep.jpg" />
+</p>
+</section>
+</section>
+</div>
+</div>
+
+<script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/js/reveal.min.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/2.5.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+]
+});
+</script>
+</body>
+</html>

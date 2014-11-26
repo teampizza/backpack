@@ -48,6 +48,7 @@
 # "rape sufferers" database
 # target retail detecting pregnancy and sending appropriate ads
 # compulsive gambling seniors database
+# internet hate mobs tracking you down from twitter
 # no fly lists
 ** stats
 - First alpha/POC over Startup Weekend (v0.1)

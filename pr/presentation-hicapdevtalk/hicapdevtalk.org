@@ -25,7 +25,7 @@
 #+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
 
 * Me
-- MS student at UH EE
+- MS student at UH (EE)
 	- thesis topic: data processing and machine learning for brain-computer interfaces
 - Member UH EE Student Advisory Board
 - UH divestment campaign technical assistant
@@ -48,6 +48,7 @@
 # fitbit data used in canadian court
 # private robots patrolling SF businesses
 # "rape sufferers" database
+# target detecting pregnancy and sending appropriate ads
 # compulsive gambling seniors database
 # no fly lists
 ** stats
@@ -58,21 +59,11 @@
 
 # gitstats activity image here
 [[./hour_of_day.png]]
-* code (review)
-** overall structure
+** program structure
 # latex flowchart?
 
 [[./Slide05.png]]
 
-** parser
-# go to code here
-** listener hellJSON
-# go to code here
-# insane commit messages
-
-# image of satan goat (jacobs?)
-- hi jason (hail satan)
-[[./jacobsheep.png]]
 * thanks
 # selfish enterprise yet so many to thank
 - professional driven team
@@ -101,6 +92,17 @@ thank-you post at: https://www.hitono.info/eng/2014/11/17/you-got-your-back.html
 * some asks
 - please vote for us *tomorrow*: https://vimeo.com/112257183
 - we're a community project: come fight the good fight at [[https://github.com/teampizza/backpack][github.com/teampizza/backpack]]
+* code (review)
+** parser
+# go to code here
+** listener hellJSON
+# go to code here
+# insane commit messages
+
+# image of satan goat (jacobs?)
+- hi jason (hail satan)
+[[./jacobsheep.png]]
+
 * Archive																														:ARCHIVE:
 ** rough
 	 :PROPERTIES:

@@ -19,10 +19,7 @@
 # OPTIONS: org-reveal-mathjax:t
 #+OPTIONS: reveal_controls:nil
 # REVEAL_EXTRA_CSS: /home/sobakasu/unisync/tools/reveal.css
-# <img src="./hicap_logo.svg" style="z-index: -1"></img>
 
-#+HTML: <div><img src="./backpack_horz_logolight.png" style="z-index: -1; position: absolute; top: -110%; left: 12%"></img></div>
-#+HTML: <div><img src="./backpack_logolight.png" style="z-index: -1; height: 150px; position: absolute; top: -50%; left: -70%"></img></div>
 
 * Me
 - MS student at UH (EE)
@@ -107,10 +104,11 @@ full post at: https://www.hitono.info/backpackthanks
 
 
 ** listener hellJSON
+- fixed in commit 2bb4df
 # go to code here
 # insane commit messages
+- hi jason (hail satan)
 
 # image of satan goat (jacobs?)
-- hi jason (hail satan)
 [[./jacobsheep.jpg]]
 

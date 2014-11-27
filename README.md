@@ -54,11 +54,15 @@ Commands (POSIX):
 
 	# dependencies
     ## python/listener
-	sudo apt-get install python-setuptools
+	sudo apt-get install python-setuptools debconf-utils
 	sudo easy_install pip
 	pip install pexpect
 	pip install requests
+	## set debconf config to create wireshark capture group
+	sudo echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections
 	sudo apt-get install tshark
+	## add user to capture group
+	sudo adduser $USER wireshark
 
     ## node
 	curl -sL https://deb.nodesource.com/setup | sudo bash -
@@ -89,8 +93,7 @@ Commands (POSIX):
 	## python parser
 	nano backend/parser/parser.py
     ### change tsharkinterface to "-i <your net interface>"
-    ### superuser is currently needed for network listen
-	sudo python backend/parser/parser.py
+	python backend/parser/parser.py
 
 	## open browser
 	sensible-browser 'http://localhost:3000/'

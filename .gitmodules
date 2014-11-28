@@ -1,0 +1,3 @@
+[submodule "submodules/node-tshark"]
+	path = submodules/node-tshark
+	url = git@github.com:joeferner/node-tshark.git

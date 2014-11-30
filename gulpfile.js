@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    shell = require('gulp-shell'),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     prefix = require('gulp-autoprefixer'),
@@ -25,5 +26,10 @@ gulp.task('watch', function() {
   gulp.watch('app/client/styles/**/*.scss', ['sass']);
 });
 
+gulp.task('meteor', shell.task([
+  // Set enviorment variables then start meteor
+  'cd app && source config/env.sh && meteor'
+]))
+
 // Default task
-gulp.task('default', ['watch']);
+gulp.task('default', ['meteor', 'watch']);

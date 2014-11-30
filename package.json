@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "mongojs": "^0.17.0",
+    "nodemon": "^1.2.1",
     "pcap": "^1.2.0"
   },
   "devDependencies": {

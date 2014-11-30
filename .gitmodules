@@ -1,6 +1,3 @@
-[submodule "submodules/node-tshark"]
-	path = submodules/node-tshark
-	url = git@github.com:joeferner/node-tshark.git
 [submodule "submodules/node_pcap"]
 	path = submodules/node_pcap
 	url = https://github.com/mranney/node_pcap.git

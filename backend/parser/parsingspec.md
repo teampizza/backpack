@@ -1,14 +1,14 @@
 # parsing outline (draft)
 
-## inputs (future)
+## inputs
 
 ### necessary fields
 
-the parser should take a field list from the enabled models and enable them in the tshark call options.
+the parser should take a field list from the enabled models and enable them in the `node-pcap` call options.
 
 ### interface
 
-the app should autodetect available interfaces and guess the right interface to listen on (probably `wlan0` or similar). User override in settings if needed.
+Parser looks for `$NET_INTERFACE` and uses that where needed.
 
 ## output format
 

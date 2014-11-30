@@ -12,6 +12,10 @@ Parser looks for `$NET_INTERFACE` and uses that where needed.
 
 ## output format
 
+**BELOW IS DEPRECATED TSHARK INFO**
+
+---------
+
 we're currently using `-V -l -p -t e`, which gives output like this:
 
 

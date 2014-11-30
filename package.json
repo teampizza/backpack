@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "mongojs": "^0.17.0",
-    "restify": "^2.8.3"
+    "pcap": "^1.2.0",
   }
 }

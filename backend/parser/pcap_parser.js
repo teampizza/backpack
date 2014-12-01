@@ -15,7 +15,7 @@ pcap_session = pcap.createSession(iface, "ip proto \\tcp");
 tcp_tracker = new pcap.TCP_tracker();
 
 // original POC, search for Facebook Connect social beacon
-// liberally borrowed from 
+// liberally borrowed from
 // https://github.com/mranney/node_pcap/blob/master/examples/network_grep.js
 sourcematcher = /connect.facebook.net/;
 referermatcher = /Referer: (.*)/;
@@ -26,15 +26,15 @@ var referer;
 pcap_session.on('packet', function (raw_packet) {
     var packet = pcap.decode.packet(raw_packet),
         data = packet.link.ip.tcp.data;
-    
+
     if (data && sourcematcher.test(data.toString())) {
         console.log(pcap.print.packet(packet));
         // console.log(data.toString());
-				
+
 				if (referermatcher.test(data.toString())) {
-						referer = referermatcher.exec(data.toString())[1]
+						referer = referermatcher.exec(data.toString())[1];
 						console.log(referer);
-						
+
 						// save to DB
 						db.alerts.save({msg: referer,
 														created_date: Date.now()

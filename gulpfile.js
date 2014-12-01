@@ -36,8 +36,20 @@ gulp.task('parser', shell.task([
   // Set NET_INTERFACE variable
   // Start pcap parser
   // Need nodemon installed
-  'cd backend/parser && ./env.sh && nodemon pcap_parser.js'
+  './backend/parser/env.sh',
+	'nodemon backend/parser/pcap_parser.js --watch'
 ]));
 
+gulp.task('setcap',shell.task([
+		// Add wireshark group
+		// Add $USER to wireshark
+		// set parser script group to wireshark
+		// give parser script capture permissions
+		'sudo ./backend/parser/cap_permission.sh'
+	]));
+	
 // Default task
 gulp.task('default', ['meteor', 'parser', 'watch']);
+
+// Permission task
+gulp.task('permissions', ['setcap']);

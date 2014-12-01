@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     plumber = require('gulp-plumber'),
     prefix = require('gulp-autoprefixer'),
+    nodemon = require('gulp-nodemon'),
     notify = require('gulp-notify');
 
 // Environment variables
@@ -31,25 +32,29 @@ gulp.task('watch', function() {
 });
 
 gulp.task('meteor', shell.task([
-  // Set MONGO_URL variable
   // Start meteor
   'cd app && meteor'
 ]));
 
-gulp.task('parser', shell.task([
+gulp.task('parser', function() {
   // Start pcap parser
-  // Need nodemon installed
-	'nodemon backend/parser/pcap_parser.js --watch'
-]));
+  nodemon({
+    script: 'backend/parser/pcap_parser.js',
+    ext: 'js',
+    ignore: ['app/**']
+  }).on('restart', function () {
+      console.log('restarted! ' + (new Date()));
+    });
+});
 
 gulp.task('setcap',shell.task([
-		// Add wireshark group
-		// Add $USER to wireshark
-		// set parser script group to wireshark
-		// give parser script capture permissions
-		'sudo ./backend/parser/cap_permission.sh'
-	]));
-	
+	// Add wireshark group
+	// Add $USER to wireshark
+	// set parser script group to wireshark
+	// give parser script capture permissions
+	'sudo ./backend/parser/cap_permission.sh'
+]));
+
 // Default task
 gulp.task('default', ['meteor', 'parser', 'watch']);
 

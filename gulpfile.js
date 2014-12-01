@@ -33,14 +33,12 @@ gulp.task('watch', function() {
 gulp.task('meteor', shell.task([
   // Set MONGO_URL variable
   // Start meteor
-  'cd app && ./config/env.sh && meteor'
+  'cd app && meteor'
 ]));
 
 gulp.task('parser', shell.task([
-  // Set NET_INTERFACE variable
   // Start pcap parser
   // Need nodemon installed
-  './backend/parser/env.sh',
 	'nodemon backend/parser/pcap_parser.js --watch'
 ]));
 

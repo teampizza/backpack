@@ -5,6 +5,10 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     notify = require('gulp-notify');
 
+// Environment variables
+process.env.MONGO_URL = "mongodb://localhost:27017/backpack"
+process.env.NET_INTERFACE = "wlan0"
+
 // Growl error messages
 function onError(err) {
   notify.onError(err.message)(err); // for growl

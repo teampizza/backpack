@@ -51,20 +51,16 @@ summarized, and presented in an alert.
 
 ### build instructions
 
-We'll be automating this
-[soon](https://github.com/teampizza/backpack/milestones/v0.2%20second%20alpha),
-but if you just want to jump in, here's the steps:
-
 1. Clone repo
 2. Install dependencies
-    3. Python
     4. Node
     5. Meteor
     6. MongoDB
+7. Configuration
+    8. Set `NET_INTERFACE` to your network interface name
+    9. Run gulp task to grant network listening permission
 4. Start processes
-    4. Start mongod
-    3. Start Parser
-    4. Start Meteor
+    5. Run gulp default task
 6. Open browser to app page
 
 Commands (POSIX):
@@ -89,17 +85,18 @@ Commands (POSIX):
 	# startup
 	## mongod
 	mongod --logpath ~/backpacklog
-
-	## meteor
 	cd app/
-	### export env var (fish)
-	set -x MONGO_URL "mongodb://127.0.0.1:27017/backpack"
-	meteor &
-	cd ..
 
-	## parser
-	### export env var (fish)
-	set -x NET_INTERFACE "your network interface name"
+	## env vars
+	nano gulpfile.js
+	### change process.env.NET_INTERFACE to your iface name
+
+	## network permissions
+	gulp setcap
+
+	## run
+	gulp
+	
 	## open browser
 	sensible-browser 'http://localhost:3000/'
 

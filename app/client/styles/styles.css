@@ -140,7 +140,7 @@ nav ul#main_nav {
   box-sizing: border-box; }
 
 ul#button li {
-  display: inline-block;
+  display: table-cell;
   width: 50%;
   text-align: center;
   box-sizing: border-box;

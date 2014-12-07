@@ -13,14 +13,20 @@ var iface = process.env[ifacevar];
 pcap_session = pcap.createSession(iface, "ip proto \\tcp");
 tcp_tracker = new pcap.TCP_tracker();
 
+
+referermatcher = /Referer: (.*)/;
 // TODO get this into a field-separated JSON
+// issue -- lots of data that can't be decoded (https, etc.)
+// proposed solution:
+// store available fields as able, then rely on models to toString() packet data
 pcap_session.on('packet', function (raw_packet) {
     var packet = pcap.decode.packet(raw_packet);
-		data = packet.link.ip.tcp.data;
-		if (data) {
-				console.log(data.toString());
-				// console.log(pcap.print.packet(packet));
-		}
+		var data = packet.link.ip.tcp.data;
+		// if (data && referermatcher.test(data.toString())) {
+		// 		console.log(data.toString());
+		// 		// console.log(pcap.print.packet(packet));
+		// }
+		// console.log(JSON.stringify(packet));
 });
 
 // TODO put it into netdata

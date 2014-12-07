@@ -4,6 +4,7 @@
   "description": "identity is a payload",
   "private": true,
   "dependencies": {
+    "deepmerge": "^0.2.7",
     "mongojs": "^0.17.0",
     "nodemon": "^1.2.1",
     "pcap": "^1.2.0"

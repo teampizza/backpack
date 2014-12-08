@@ -22,8 +22,11 @@ established by `pcap` and `node_pcap` unless not applicable. Specifically, it
 will parse and return keys as required by Modeler at startup (i.e., according to
 the needs of installed models).
 
-At a minimum, the following keys will always be returned:
+At a minimum, the following keys will always be returned if present:
 
-- Timestamp
-- Protocol
-- Destination Address
+- Timestamp `pcap_header.time_ms`
+- Protocol `link_type`, `link.ip.protocol_name`
+- Destination Address `link.ip.daddr`, `link.dhost` (MAC)
+- Destination Port `link.ip.tcp.dport`
+- Source Address `link.ip.saddr`, `link.shost` (MAC)
+- Source Port `link.ip.tcp.sport`

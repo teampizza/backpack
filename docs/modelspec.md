@@ -16,7 +16,9 @@ following two files are required:
 e.g. `socialbeacon`. Helper functions should support this function.
 
 The main model function should take as argument the output of whatever backend
-it relies on. This is probably going to be a single JSON object in all cases.
+it relies on. This is probably going to be a single JSON object in all
+cases. The main model function should return a single JSON object containing the
+alert fields (currently only `msg` and `created_date`).
 
 ### description ###
 

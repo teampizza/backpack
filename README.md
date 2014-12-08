@@ -49,6 +49,13 @@ summarized, and presented in an alert.
 
 ## technical
 
+**backpack** is still very much developer only.
+
+If you want to start hacking, start by reading the [draft specs](docs/) and
+checking out the [issues](https://github.com/teampizza/backpack/issues). If you
+have questions, reach out to us at
+[gitter](https://gitter.im/teampizza/backpack).
+
 ### build instructions
 
 1. Clone repo
@@ -111,16 +118,17 @@ Here's a short list of the major components, from back to front.
 #### node_pcap ####
 
 We rely on [node_pcap](https://github.com/mranney/node_pcap) for capturing and
-parsing network traffic.
+parsing network traffic. This is wrapped in the backend **Parser**.
 
 #### MongoDB ####
 
-After parsing, the data is inserted into a MongoDB collection as a document
-containing fields of interest. This data will be made available to model threads
-for processing in
-[v0.2](https://github.com/teampizza/backpack/milestones/v0.2%20second%20alpha).
+After parsing, the data is inserted into a MongoDB collection `netdata` as a
+document containing fields of interest. This data is made available to model
+threads by publishing through `mubsub`. **Modeler** subscribes to `netdata` and
+sends that data on to models (the only one that is in spec is the POC model at
+the moment).
 
-When a model's tests pass, an alert event is triggered, and inserted into an
+When a model's tests pass, an alert object is returned, and inserted into an
 alert database, which is read by the frontend.
 
 ### frontend ###
@@ -129,5 +137,5 @@ alert database, which is read by the frontend.
 
 A Meteor process watches the alert database for changes, updating an HTML page
 feed with a low-intensity alert card. The user can acknowledge and snooze the
-alert, or mark it for followup. A click expands the card with further
-information and info link on how to seal the leak detected.
+alert (UI only for now), or mark it for followup. A click expands the card with
+further information and info link on how to seal the leak alerted.

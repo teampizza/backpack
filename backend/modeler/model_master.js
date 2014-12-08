@@ -1,6 +1,6 @@
 var mongojs = require('mongojs');
 var mubsub = require('mubsub');
-var netdata_client = mubsub('mongodb://localhost:27017/backpack');
+var netdata = mubsub('mongodb://localhost:27017/backpack');
 var alertdb = mongojs.connect('localhost:27017/backpack', ['alerts']);
 // TODO import all models through manifest
 // TODO straighten this path tripe out
@@ -12,13 +12,27 @@ var models = require('include-all')({
   optional    :  true
 });
 
-var netdata_channel = netdata_client.channel('netdata');
+var netdata_channel = netdata.channel('netdata');
 // are we up? print
-console.log(netdata_channel);
+// console.log(netdata_channel);
 
 // when a new document is added to netdata, pass it to models
 // TODO unify into single model_dispatch function
-var netdata_sub = netdata_channel.subscribe(function(newdata) {
-		console.log(newdata.toString());
-		models.socialbeacon.model(newdata);
+netdata_channel.subscribe('newpacket', function(newdata) {
+	
+	// TODO collect model alerts by iterating through models object asyncly
+	var modelalerts = [models.socialbeacon.model(newdata)];
+	// save nonempty elements to alerts DB
+	// http://stackoverflow.com/a/5443800/2023432
+	insert_alerts(modelalerts.filter(Boolean), alertdb);
+
 });
+
+function insert_alerts(objarray, db) {
+	// TODO insert response callback
+	if (objarray.length > 0) {
+		objarray.forEach(function(obj) {
+			db.alerts.save(obj)
+		});
+	}
+}

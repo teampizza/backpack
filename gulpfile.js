@@ -43,7 +43,7 @@ gulp.task('parser', function() {
     ext: 'js',
     ignore: ['app/**']
   }).on('restart', function () {
-      console.log('restarted! ' + (new Date()));
+      console.log('restarted parser ' + (new Date()));
     });
 });
 
@@ -53,7 +53,7 @@ gulp.task('modeler', function() {
 		ext: 'js',
 		ignore: ['app/**']
 	}).on('restart', function() {
-		console.log('restarted modeler' + (new Date()));
+		console.log('restarted modeler ' + (new Date()));
 	});
 });
 

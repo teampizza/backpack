@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "deepmerge": "^0.2.7",
+    "include-all": "^0.1.6",
     "mongojs": "^0.17.0",
     "mubsub": "^1.0.4",
     "nodemon": "^1.2.1",

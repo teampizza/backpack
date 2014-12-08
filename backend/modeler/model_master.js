@@ -4,7 +4,7 @@ var netdata_client = mubsub('mongodb://localhost:27017/backpack');
 var alertdb = mongojs.connect('localhost:27017/backpack', ['alerts']);
 // TODO import all models through manifest
 // TODO straighten this path tripe out
-require('./backend/modeler/models/socialbeacon/model.js');
+require('./models/socialbeacon/model.js');
 var models = require('include-all')({
   dirname     :  process.cwd() + '/backend/modeler/models',
   filter      :  /(.+)\.js$/,
@@ -13,6 +13,7 @@ var models = require('include-all')({
 });
 
 var netdata_channel = netdata_client.channel('netdata');
+// are we up? print
 console.log(netdata_channel);
 
 // when a new document is added to netdata, pass it to models

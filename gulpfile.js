@@ -47,6 +47,16 @@ gulp.task('parser', function() {
     });
 });
 
+gulp.task('modeler', function() {
+	nodemon({
+		script: 'backend/modeler/model_master.js',
+		ext: 'js',
+		ignore: ['app/**']
+	}).on('restart', function() {
+		console.log('restarted modeler' + (new Date()));
+	});
+});
+
 gulp.task('setcap',shell.task([
 	// Add wireshark group
 	// Add $USER to wireshark
@@ -56,7 +66,7 @@ gulp.task('setcap',shell.task([
 ]));
 
 // Default task
-gulp.task('default', ['meteor', 'parser', 'watch']);
+gulp.task('default', ['meteor', 'parser', 'modeler', 'watch']);
 
 // Permission task
 gulp.task('permissions', ['setcap']);

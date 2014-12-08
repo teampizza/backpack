@@ -4,22 +4,13 @@ var netdata_client = mubsub('mongodb://localhost:27017/backpack');
 var alertdb = mongojs.connect('localhost:27017/backpack', ['alerts']);
 // TODO import all models through manifest
 // TODO straighten this path tripe out
-// var model_socialbeacon = require('./backend/modeler/models/socialbeacon/model.js');
+require('./backend/modeler/models/socialbeacon/model.js');
 var models = require('include-all')({
   dirname     :  process.cwd() + '/backend/modeler/models',
   filter      :  /(.+)\.js$/,
   excludeDirs :  /^\.(git|svn)$/,
   optional    :  true
 });
-
-// original POC, search for Facebook Connect social beacon
-// liberally borrowed from
-// https://github.com/mranney/node_pcap/blob/master/examples/network_grep.js
-
-// TODO poll netdata DB
-
-// TODO break this out to a sub-model process
-// what we're looking for now is the site that referred us to FB
 
 var netdata_channel = netdata_client.channel('netdata');
 console.log(netdata_channel);

@@ -12,9 +12,10 @@ var iface = process.env[ifacevar];
 // filter syntax comes from 'man pcap-filter'
 // for now let's do TCP/HTTP
 pcap_session = pcap.createSession(iface, "ip proto \\tcp");
-tcp_tracker = new pcap.TCP_tracker();
 
-// TODO get this into a field-separated JSON
+
+// tcp_tracker = new pcap.TCP_tracker();
+
 // issue -- lots of data that can't be decoded (https, etc.)
 // proposed solution:
 // store available fields as able, then rely on models to toString() packet data
@@ -31,6 +32,12 @@ pcap_session.on('packet', function (raw_packet) {
 		db.netdata.save(build_payload(packet,'node_pcap'));
 });
 
+function start_capsession(net_iface, protocols) {
+		// TODO test inputs for validity or catch errors
+		return(
+				pcap.createSession(net_iface,protocols.join(" or "))
+		);
+}
 
 function build_payload(dataobj,backend_name) {
 		backend_name = backend_name || 'node_pcap'; // default arg
@@ -40,4 +47,13 @@ function build_payload(dataobj,backend_name) {
 		var payload = {};
 		payload.backend = backend_name;
 		return(merge(payload,dataobj));
+}
+
+function cap_dbcollection(thisdb, collection, dbsize) {
+		// util function to check if DB is capped and if not, cap it to user-set
+		// size
+		// TODO test
+		if(! thisdb.collection.isCapped()) {
+				thisdb.runCommand({"convertToCapped": collection, size: dbsize});
+		}
 }

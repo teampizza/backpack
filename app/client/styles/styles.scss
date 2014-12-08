@@ -180,7 +180,7 @@ nav ul#main_nav{
 }
 
 ul#button li{
-  display: inline-block;
+  display: table-cell;
   width: 50%;
   text-align: center;
   box-sizing: border-box;
@@ -204,7 +204,7 @@ ul#button li:last-child{
   background: rgba(255, 255, 255, 0.7);
 }
 
-ul#button li:hover a{
+ul#button li:hover a {
   background: rgba(255, 255, 255, 1);
 }
 
@@ -212,11 +212,7 @@ ul#button li:hover a{
   opacity: 0;
 }
 
-@-webkit-keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

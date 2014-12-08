@@ -1,10 +1,23 @@
-# future goals
+# future directions
 
-## minimum privilege execution
+## realized identity management
 
-Directly analyzing the network data with TShark requires root privileges.
-This is a potential security risk as TShark scripts and dissectors may include hazardous code that we don't want to be responsible for.
+Packets may form connections and sessions, but what ties all that together
+conceptually is the **identity** they form. Allowing users to define their
+identities within backpack to help models identify when they're improperly
+segmented or mixed would give users something to grab on to, as far as total
+concept goes.
 
-A potential workaround from Wikipedia:
+Some components this would include:
 
-> Elevated privileges are not needed for all operations. For example, an alternative is to run tcpdump or the dumpcap utility that comes with Wireshark with superuser privileges to capture packets into a file, and later analyze the packets by running Wireshark with restricted privileges. To emulate near realtime analysis, each captured file may be merged by `mergecap` into growing file processed by Wireshark. On wireless networks, it is possible to use the Aircrack wireless security tools to capture IEEE 802.11 frames and read the resulting dump files with Wireshark.
+- [ ] identity selectors
+- [ ] password safe
+- [ ] proxy/browser bundles (Tor etc.)
+
+## automatic risk mitigation: zipper
+
+(Discussed orally previously.)
+
+There is probably a big subset of model-targeted behaviors/security risks that
+can be mitigated by automatic means (usually a config change). This could be a
+purely paid product.

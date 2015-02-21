@@ -1,4 +1,5 @@
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/teampizza/backpack)
+[![Stories in Ready](https://badge.waffle.io/teampizza/backpack.png?label=ready&title=Ready)](http://waffle.io/teampizza/backpack)
 
 backpack
 ========

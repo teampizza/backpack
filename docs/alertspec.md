@@ -13,7 +13,7 @@ UI+frontend.
     - Alert status
 - Modeler-controlled
     - Model info
-    - Source URL
+    - Source/referrer URL
     - Timestamp
     - Alert status
 
@@ -36,3 +36,15 @@ Additionally, it presents the following controls:
 - Ignore: deactivates this alert (i.e., acknowledge review)
 - Reject: deactivates alerts of this type permanently
 
+### Digest
+
+The digest feed displays the following aggregate statistics:
+
+- Number of alerts by type
+- Number of alerts by referring domain (as applicable)
+
+These statistics are broken up into three periods:
+
+- Current day
+- Current month
+- Lifetime

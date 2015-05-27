@@ -9,7 +9,7 @@ var netdata_channel = netdata.channel('netdata');
 var pcap = require('pcap');
 // environment var name
 var ifacevar = 'NET_INTERFACE';
-var iface = process.env[ifacevar];
+var iface = process.env[ifacevar] || 'wlan0';
 
 
 // make sure netdata DB is capped (10Mb here)
@@ -47,7 +47,7 @@ function start_capsession(net_iface, protocols) {
 	});
 	var protostring = 'ip proto (' + esc_protocols.join(' or ') + ')';
 	return(
-		pcap.createSession(net_iface,protostring)
+		pcap.createSession(net_iface, protostring)
 	);
 }
 

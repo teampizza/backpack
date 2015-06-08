@@ -7,26 +7,26 @@
 // - a status
 // - a description w/ advice link
 
-Factory.define('alert', AlertsCollection, {
-  name: Fake.word(),
-  url: "http://www." + Fake.word() + Fake.word() + ".com/",
-  status: "new",
-  description: Fake.paragraph()
-});
+Meteor.startup(function() {
+  Factory.define('alert', AlertsCollection, {
+    name: function() {
+      return Fake.word();
+    },
+    url: function() {
+      return 'http://www.' + Fake.word() + Fake.word() + '.com/';
+    },
+    status: 'new',
+    description: function() {
+      return Fake.paragraph();
+    }
+  });
 
-// The redundant-looking fields are just there to allow the payloads to be
-// randomly regenerated every time the function is called.
-function seedAlert() {
-  return(
-    Factory.create('alert',{
-      name: Fake.word(),
-      url: "http://www." + Fake.word() + Fake.word() + ".com/",
-      status: "new",
-      description: Fake.paragraph()
-    })
-      .after(function(doc) {
-        return doc;
-      })
-  );
-}
+  // Remove all alerts before seeding
+  AlertsCollection.remove({});
+
+  // Generate 10 random alerts
+  _(10).times(function(n) {
+    Factory.create('alert');
+  });
+});
 

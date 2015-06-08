@@ -1,6 +1,6 @@
 Template.feed.helpers({
   alerts: function () {
-    return alertsCollection.find({}, {sort: {created_date: -1}});
+    return alertsCollection.find({}, {sort: {created: -1}});
   }
 });
 

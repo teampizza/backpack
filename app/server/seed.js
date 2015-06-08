@@ -18,6 +18,9 @@ Meteor.startup(function() {
     status: 'new',
     description: function() {
       return Fake.paragraph();
+    },
+    created: function() {
+      return Date.now();
     }
   });
 

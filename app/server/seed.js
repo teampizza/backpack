@@ -26,7 +26,10 @@ Meteor.startup(function() {
 
   // Generate 10 random alerts
   _(10).times(function(n) {
-    Factory.create('alert');
+    Meteor.setTimeout(function() {
+      Factory.create('alert');
+    }, n * 5000);
   });
+
 });
 

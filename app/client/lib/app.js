@@ -5,10 +5,6 @@ Template.feed.helpers({
 });
 
 Template.hello.helpers({
-  msg: function() {
-    return this.msg.replace('//', '');
-  },
-
   status: function() {
     if (this.status == 'yes') {
       return 'green';

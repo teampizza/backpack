@@ -33,8 +33,17 @@ The vertical feed displays the following info:
 
 Additionally, it presents the following controls:
 
-- Ignore: deactivates this alert (i.e., acknowledge review)
-- Reject: deactivates alerts of this type permanently
+- Accept (on alert expand): deactivates this alert (i.e., acknowledge review)
+- Ignore this alert type: deactivates alerts of this type permanently
+- Ignore this domain
+
+This translates to three values for the `status` key:
+
+- "new": All alerts newly detected start this way
+- "read": After alert is expanded
+- "ignore": After alert is ignored
+
+If a domain is ignored, the UserPrefs collection should update its `ignores.domains` array to include that domain. If an alert is ignored, the `ignores.models` array should include that model type.
 
 ### Digest
 

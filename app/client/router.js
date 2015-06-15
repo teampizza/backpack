@@ -5,3 +5,7 @@ Router.configure({
 Router.route('/', function () {
   this.render('feed');
 });
+
+Router.route('/reports', function () {
+  this.render('reports');
+});

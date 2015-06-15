@@ -1,0 +1,34 @@
+<template name="feed">
+  {{#each alerts}}
+    {{> hello}}
+  {{/each}}
+</template> 
+
+<template name="hello">
+  <section class="feed_content clearfix {{status}}">
+    <img class="feed-icon" src="/images/bp-icon.png" alt="backpack">
+    <h3 class="report">{{name}}</h3>
+    <p class="summary">{{url}}</p>
+    <div class="details">
+      <p>
+        {{description}}
+      </p>
+      <a class="advice" href="#">
+        How to fix >
+      </a>
+    </div>
+
+    <ul id="button">
+      <li class="checkmark">
+        <a href="#">
+          <img src="/images/checkmark.svg" alt="">
+        </a>
+      </li>
+      <li class="xmark">
+        <a href="#">
+          <img src="/images/xmark.svg" alt="">
+        </a>
+      </li>
+    </ul>
+  </section>
+</template>

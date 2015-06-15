@@ -3,58 +3,24 @@
 </head>
 
 <body>
-
-<header>
-  <div id="banner">
-    <h1 id="title">
-      <img alt="Backpack Logo" src="/images/bp-logo.png">
-    </h1>
-  </div>
-  <nav>
-    <ul id="main_nav">
-      <li class="nav_item"><a href="#">Feed</a> &middot; </li>
-      <li class="nav_item"><a href="#">Report</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div id="body_container" class="clearfix">
-  {{> feed}}
-</div>
-
 </body>
 
-<template name="feed">
-  {{#each alerts}}
-    {{> hello}}
-  {{/each}}
-</template>
-
-<template name="hello">
-  <section class="feed_content clearfix {{status}}">
-    <img class="feed-icon" src="/images/bp-icon.png" alt="backpack">
-    <h3 class="report">{{name}}</h3>
-    <p class="summary">{{url}}</p>
-    <div class="details">
-      <p>
-        {{description}}
-      </p>
-      <a class="advice" href="#">
-        How to fix >
-      </a>
+<template name="layout">
+  <header>
+    <div id="banner">
+      <h1 id="title">
+        <img alt="Backpack Logo" src="/images/bp-logo.png">
+      </h1>
     </div>
+    <nav>
+      <ul id="main_nav">
+        <li class="nav_item"><a href="#">Feed</a> &middot; </li>
+        <li class="nav_item"><a href="#">Report</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <ul id="button">
-      <li class="checkmark">
-        <a href="#">
-          <img src="/images/checkmark.svg" alt="">
-        </a>
-      </li>
-      <li class="xmark">
-        <a href="#">
-          <img src="/images/xmark.svg" alt="">
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div id="body_container" class="clearfix">
+      {{> yield}}
+  </div>
 </template>

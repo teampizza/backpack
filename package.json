@@ -14,7 +14,9 @@
     "modeler": "env MONGO_URL=mongodb://localhost:27017/backpack NET_INTERFACE=wlan0 nodemon backend/modeler/model_master.js",
     "watch": "",
     "setperms": "env NET_INTERFACE=wlan0 sudo ./backend/parser/cap_permission.sh",
-    "sass": "",
+    "css:sass": "node-sass app/client/styles/styles.scss app/client/styles/styles.css",
+    "css:prefix": "autoprefixer -b 'last 2 versions' app/client/styles/styles.css",
+    "watch-sass": "nodemon -e scss -w app/client/styles -x 'npm run css:sass & npm run css:prefix'",
     "start": "npm run-script meteor & npm run-script parser & npm run-script modeler"
   },
   "dependencies": {
@@ -26,12 +28,14 @@
     "pcap": "^1.2.0"
   },
   "devDependencies": {
+    "autoprefixer": "^5.2.0",
     "gulp": "^3.8.8",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-nodemon": "^1.0.4",
     "gulp-notify": "^2.0.1",
     "gulp-plumber": "^0.6.6",
     "gulp-sass": "^0.7.3",
-    "gulp-shell": "^0.2.11"
+    "gulp-shell": "^0.2.11",
+    "node-sass": "^3.2.0"
   }
 }

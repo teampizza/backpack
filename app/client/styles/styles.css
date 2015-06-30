@@ -80,6 +80,7 @@ nav ul#main_nav {
   padding: 5px; }
 
 .feed_content {
+  position: relative;
   text-align: left;
   padding: 5px 0 0;
   margin: 25px auto;
@@ -191,3 +192,26 @@ ul#button li:hover a {
     opacity: 0; }
   100% {
     opacity: 1; } }
+
+.ignore-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  width: 50%;
+  text-align: center;
+  z-index: 10; }
+  .ignore-dropdown a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background: #d5b3b5;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #333;
+    text-decoration: none; }
+    .ignore-dropdown a:hover {
+      background: #fff;
+      color: #555; }
+  .ignore-dropdown li:last-child a {
+    border-top: 0; }

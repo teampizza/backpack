@@ -17,18 +17,21 @@ Template.hello.helpers({
 alertsRead = [];
 
 Template.hello.events({
-  'click #button a': function (e, t) {
+  'click #button .checkmark': function(e, t) {
     e.preventDefault();
     var parentClass = $(e.target).parent().attr('class');
-    var reponse = 'no';
-
-    if (parentClass == 'checkmark') {
-      reponse = 'yes';
-    }
+    var reponse = 'read';
 
     Meteor.call('feedContentResponse', this._id, reponse, function(error, result) {
       console.log(result);
     });
+  },
+
+  'click #button .xmark': function(e, t) {
+    e.preventDefault();
+    var $this = $(e.target);
+
+    $this.parent().parent().next().slideToggle('fast');
   },
 
   'click .report': function(e, t) {

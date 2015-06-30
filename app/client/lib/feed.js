@@ -1,6 +1,6 @@
 Template.feed.helpers({
-  alerts: function () {
-    return alertsCollection.find({status: 'new'}, {sort: {created: -1}});
+  alerts: function() {
+    return alertsCollection.find({status: 'new'}, {sort: {created: -1}, reactive: false});
   }
 });
 
@@ -13,6 +13,8 @@ Template.hello.helpers({
     }
   }
 });
+
+alertsRead = [];
 
 Template.hello.events({
   'click #button a': function (e, t) {
@@ -32,5 +34,15 @@ Template.hello.events({
   'click .report': function(e, t) {
     e.preventDefault();
     $(e.target).siblings('.details').slideToggle();
+    var alertId = this._id;
+
+    if (!!alertsRead.indexOf(alertId)) {
+      Meteor.call('feedContentResponse', alertId, 'read', function(error, result) {
+        console.log(result);
+
+        alertsRead.push(alertId);
+      });
+    }
   }
 });
+

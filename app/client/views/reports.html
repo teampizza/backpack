@@ -4,9 +4,31 @@
   {{#with today}}
     <div class="digest">
       <h3>Today</h3>
-      <p>new: {{todayNewCount}}</p>
-      <p>Read: {{todayReadCount}}</p>
-      <p>Ignored: {{todayIgnoredCount}}</p>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
     </div>
   {{/with}}
+  {{#with thisWeek}}
+    <div class="digest">
+      <h3>This week</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+  {{#with thisMonth}}
+    <div class="digest">
+      <h3>This month</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+  <div class="digest">
+    <h3>Lifetime</h3>
+    <h4>Social Beacon</h4>
+    <p>Read: {{readCount}}</p>
+    <p>Ignored: {{ignoredCount}}</p>
+  </div>
 </template>

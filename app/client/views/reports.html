@@ -25,10 +25,12 @@
       <p>Ignored: {{ignoredCount}}</p>
     </div>
   {{/with}}
-  <div class="digest">
-    <h3>Lifetime</h3>
-    <h4>Social Beacon</h4>
-    <p>Read: {{readCount}}</p>
-    <p>Ignored: {{ignoredCount}}</p>
-  </div>
+  {{#with lifetime}}
+    <div class="digest">
+      <h3>Lifetime</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
 </template>

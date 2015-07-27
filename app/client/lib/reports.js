@@ -17,11 +17,20 @@ Template.reports.helpers({
   },
   thisMonth: function() {
     return alertReports(oneMonthAgo);
+  },
+  lifetime: function() {
+    return alertReports();
   }
 });
 
 function alertReports(dateAgo) {
-  var alerts = alertsCollection.find({created: {$gte: dateAgo, $lt: dateToday}}).fetch();
+  var alerts;
+
+  if (dateAgo) {
+    alerts = alertsCollection.find({created: {$gte: dateAgo, $lt: dateToday}}).fetch();
+  } else {
+    alerts = alertsCollection.find().fetch();
+  }
 
   var newAlerts = _.filter(alerts, function(alert) {
         return alert.status === 'new';

@@ -1,6 +1,8 @@
+'use strict';
+
 Template.feed.helpers({
   alerts: function() {
-    return alertsCollection.find({status: 'new'}, {sort: {created: -1}, reactive: false});
+    return alertsCollection.find({status: 'new'}, {sort: {created: -1}});
   }
 });
 
@@ -14,7 +16,7 @@ Template.hello.helpers({
   }
 });
 
-alertsRead = [];
+var alertsRead = [];
 
 Template.hello.events({
   'click #button .checkmark': function(e, t) {

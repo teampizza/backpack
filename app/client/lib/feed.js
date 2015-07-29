@@ -8,7 +8,7 @@ Template.feed.helpers({
 
 Template.hello.helpers({
   status: function() {
-    if (this.status == 'yes') {
+    if (this.status === 'read') {
       return 'green';
     } else {
       return 'red';
@@ -19,32 +19,29 @@ Template.hello.helpers({
 var alertsRead = [];
 
 Template.hello.events({
-  'click #button .checkmark': function(e, t) {
+  'click #button .checkmark': function(e) {
     e.preventDefault();
-    var parentClass = $(e.target).parent().attr('class');
+    var $this = $(e.target);
     var reponse = 'read';
 
-    Meteor.call('feedContentResponse', this._id, reponse, function(error, result) {
-      console.log(result);
-    });
+    Meteor.call('feedContentResponse', this._id, reponse);
   },
 
-  'click #button .xmark': function(e, t) {
+  'click #button .xmark': function(e) {
     e.preventDefault();
     var $this = $(e.target);
 
     $this.parent().parent().next().slideToggle('fast');
   },
 
-  'click .report': function(e, t) {
+  'click .report': function(e) {
     e.preventDefault();
     $(e.target).siblings('.details').slideToggle();
+    var $this = $(e.target);
     var alertId = this._id;
 
     if (!!alertsRead.indexOf(alertId)) {
       Meteor.call('feedContentResponse', alertId, 'read', function(error, result) {
-        console.log(result);
-
         alertsRead.push(alertId);
       });
     }

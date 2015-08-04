@@ -1,3 +1,36 @@
 <template name="reports">
-  <h1>Reports page</h1>
-</template> 
+  <h1>Alert count {{alerts.count}}</h1>
+  <h2>Social Beacon</h2>
+  {{#with today}}
+    <div class="digest">
+      <h3>Today</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+  {{#with thisWeek}}
+    <div class="digest">
+      <h3>This week</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+  {{#with thisMonth}}
+    <div class="digest">
+      <h3>This month</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+  {{#with lifetime}}
+    <div class="digest">
+      <h3>Lifetime</h3>
+      <p>new: {{newCount}}</p>
+      <p>Read: {{readCount}}</p>
+      <p>Ignored: {{ignoredCount}}</p>
+    </div>
+  {{/with}}
+</template>

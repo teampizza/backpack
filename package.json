@@ -24,7 +24,7 @@
     "mongojs": "^0.17.0",
     "mubsub": "^1.0.4",
     "nodemon": "^1.2.1",
-    "pcap": "^1.2.0"
+    "pcap": "git://github.com:teampizza/node_pcap.git"
   },
   "devDependencies": {
     "autoprefixer": "^5.2.0",

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "meteor": "cd app && meteor",
-    "parser": "env MONGO_URL=mongodb://localhost:27017/backpack NET_INTERFACE=wlan0 nodemon backend/parser/pcap_parser.js",
+    "parser": "env nodemon backend/parser/pcap_parser.js",
     "modeler": "env MONGO_URL=mongodb://localhost:27017/backpack NET_INTERFACE=wlan0 nodemon backend/modeler/model_master.js",
     "setperms": "env NET_INTERFACE=wlan0 sudo ./backend/parser/cap_permission.sh",
     "css:sass": "node-sass app/client/styles/styles.scss app/client/styles/styles.css",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "deepmerge": "^0.2.7",
+    "dotenv": "^1.2.0",
     "include-all": "^0.1.6",
     "mongojs": "^0.17.0",
     "mubsub": "^1.0.4",

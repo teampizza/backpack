@@ -10,3 +10,5 @@ anti:fake
 dburles:factory
 iron:router
 mrt:moment
+mike:mocha
+velocity:helpers

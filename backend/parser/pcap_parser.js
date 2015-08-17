@@ -1,24 +1,25 @@
+'use strict';
+// load env vars
+require('dotenv').load();
 var mongojs = require('mongojs');
 var mubsub = require('mubsub');
 var merge = require('deepmerge');
 
-var db = mongojs.connect('localhost:27017/backpack', ['netdata']);
-var netdata = mubsub('mongodb://localhost:27017/backpack');
-var netdata_channel = netdata.channel('netdata');
+var db = mongojs.connect(process.env.MONGO_URL.slice(10), ['netdata']);
+var netdata = mubsub(process.env.MONGO_URL);
+var netdataChannel = netdata.channel('netdata');
 
 var pcap = require('pcap');
 // environment var name
 var ifacevar = 'NET_INTERFACE';
 var iface = process.env[ifacevar];
 
-
 // make sure netdata DB is capped (10Mb here)
-// TODO take user options for this
-cap_dbcollection(db,'netdata',10000000);
+capDBCollection(db,'netdata', process.env.DB_NETSIZE);
 
 // for now let's do TCP
 // TODO take model spec for this
-pcap_session = start_capsession(iface, ['tcp']);
+var pcapSession = startCapsession(iface, ['tcp']);
 
 // session-based tracking is a higher level
 // TODO revisit this
@@ -27,48 +28,48 @@ pcap_session = start_capsession(iface, ['tcp']);
 // issue -- lots of data that can't be decoded (https, etc.)
 // proposed solution:
 // store available fields as able, then rely on models to toString() packet data
-pcap_session.on('packet', function (raw_packet) {
-  var packet = pcap.decode.packet(raw_packet);
+pcapSession.on('packet', function (rawPacket) {
+  var packet = pcap.decode.packet(rawPacket);
 
-	// console.log(packet);
+	console.log(packet);
 	
 	// send to netdata DB
-	// db.netdata.save(build_payload(packet,'node_pcap'));
-	netdata_channel.publish('newpacket',build_payload(packet,'node_pcap'));
+	// db.netdata.save(buildPayload(packet,'node_pcap'));
+	netdataChannel.publish('newpacket', buildPayload(packet,'node_pcap'));
 });
 
-function start_capsession(net_iface, protocols) {
+function startCapsession(netIface, protocols) {
 	// TODO test inputs for validity or catch errors
 	// filter syntax comes from 'man pcap-filter'
 
 	// escape protos
-	var esc_protocols = protocols.map(function(str) {
-		return("\\"+str);
+	var escProtocols = protocols.map(function(str) {
+		return('\\' + str);
 	});
-	var protostring = 'ip proto (' + esc_protocols.join(' or ') + ')';
+	var protostring = 'ip proto (' + escProtocols.join(' or ') + ')';
 	return(
-		pcap.createSession(net_iface,protostring)
+		pcap.createSession(netIface,protostring)
 	);
 }
 
-function build_payload(dataobj,backend_name) {
-	backend_name = backend_name || 'node_pcap'; // default arg
+function buildPayload(dataobj, backendName) {
+	backendName = backendName || 'node_pcap'; // default arg
 	// TODO test to make sure obj is object
 
 	// build object to be stored 
 	var payload = {};
-	payload.backend = backend_name;
+	payload.backend = backendName;
 	return(merge(payload,dataobj));
 }
 
-function cap_dbcollection(thisdb, collection, dbsize) {
+function capDBCollection(thisdb, collection, dbsize) {
 	// util function to check if DB is capped and if not, cap it to user-set
 	// size 
   // warning: blocks db write globally while working, should only be run at
 	// start
 
 	// TODO tests
-	if(! thisdb[collection].isCapped(function(err,res) {return(res)})) {
-		thisdb.runCommand({"convertToCapped": collection, size: dbsize});
+	if(! thisdb[collection].isCapped(function(err,res) {return(res);})) {
+		thisdb.runCommand({'convertToCapped': collection, size: dbsize});
 	}
 }

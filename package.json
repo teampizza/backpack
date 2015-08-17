@@ -12,7 +12,7 @@
     "meteor": "cd app && meteor",
     "parser": "env nodemon backend/parser/pcap_parser.js",
     "modeler": "env MONGO_URL=mongodb://localhost:27017/backpack NET_INTERFACE=wlan0 nodemon backend/modeler/model_master.js",
-    "setperms": "env NET_INTERFACE=wlan0 sudo ./backend/parser/cap_permission.sh",
+    "setperms": "sudo ./backend/parser/cap_permission.sh",
     "css:sass": "node-sass app/client/styles/styles.scss app/client/styles/styles.css",
     "css:prefix": "autoprefixer -b 'last 2 versions' app/client/styles/styles.css",
     "watch-sass": "nodemon -e scss -w app/client/styles -x 'npm run css:sass & npm run css:prefix'",

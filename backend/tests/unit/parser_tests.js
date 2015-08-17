@@ -3,8 +3,8 @@
 require('dotenv').load();
 var chai = require('chai');
 var expect = chai.expect;
-chai.use(require('sinon-chai'));
-var sinon = require('sinon');
+// chai.use(require('sinon-chai'));
+// var sinon = require('sinon');
 
 // function for executing shell commands and getting output
 // see http://stackoverflow.com/a/12941186/2023432
@@ -31,7 +31,7 @@ suite('pcap permissions setter', function() {
 
   it('gives parser script ownership to capture group', function(done) {
     execute('stat -c "%G" ' + parserPath, function(owningGroup) {
-      expect(owningGroup).to.equal(process.env.CAP_GROUP);
+      expect(owningGroup.trim()).to.equal(process.env.CAP_GROUP);
       done();
     });
   });
@@ -39,7 +39,7 @@ suite('pcap permissions setter', function() {
   it('grants user all, group read+execute to parser script', function(done) {
     // group read+execute is 5, user all is 7. so we set 750
     execute('stat -c "%a" ' + parserPath, function(permChecksum) {
-      expect(permChecksum).to.equal(750);
+      expect(permChecksum.trim()).to.equal('750');
       done();
     });
   });

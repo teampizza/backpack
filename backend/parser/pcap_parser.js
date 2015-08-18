@@ -7,7 +7,7 @@ var merge = require('deepmerge');
 var pcap = require('pcap');
 var iface = process.env.NET_INTERFACE;
 
-initParsing(process.env.MONGO_URL, 'netdata', iface);
+// initParsing(process.env.MONGO_URL, 'netdata', iface);
 
 // the main function that does all the work
 function initParsing(dbURL, tableName, netIface) {
@@ -20,7 +20,7 @@ function initParsing(dbURL, tableName, netIface) {
 
   // for now let's do TCP
   // TODO take model spec for this
-  var pcapSession = startCapsession(iface, ['tcp']);
+  var pcapSession = startCapsession(netIface, ['tcp']);
 
   // session-based tracking is a higher level
   // TODO revisit this
@@ -67,7 +67,6 @@ function capDBCollection(thisdb, collection, dbsize) {
   // warning: blocks db write globally while working, should only be run at
   // start
 
-  // TODO tests
   thisdb[collection].isCapped(function(err,res) {
     if(res === false) {
       thisdb.runCommand({'convertToCapped': collection, size: dbsize});
@@ -75,5 +74,10 @@ function capDBCollection(thisdb, collection, dbsize) {
   });
   return thisdb;
 }
-                              
-                              
+
+module.exports = {
+  initParsing: initParsing,
+  startCapsession: startCapsession,
+  buildPayload: buildPayload,
+  capDBCollection: capDBCollection
+};

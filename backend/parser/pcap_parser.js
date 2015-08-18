@@ -32,11 +32,13 @@ function initParsing(dbURL, tableName, netIface) {
   // data
   pcapSession.on('packet', function (rawPacket) {
     var packet = pcap.decode.packet(rawPacket);
-    
+    // console.log(packet);
     // send to netdata DB
     // db.netdata.save(buildPayload(packet,'node_pcap'));
     netdataChannel.publish('newpacket', buildPayload(packet,'node_pcap'));
   });
+
+  return {db: db, pcapSession: pcapSession};
 }
 
 function startCapsession(netIface, protocols) {

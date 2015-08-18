@@ -6,14 +6,15 @@ var expect = chai.expect;
 // chai.use(require('sinon-chai'));
 // var sinon = require('sinon');
 
+var parser = require('../../parser/pcap_parser');
+var mongojs = require('mongojs');
+var mubsub = require('mubsub');
 // function for executing shell commands and getting output
 // see http://stackoverflow.com/a/12941186/2023432
 var exec = require('child_process').exec;
 function execute(command, callback) {
-    exec(command, function(error, stdout, stderr){ callback(stdout); });
-};
-
-
+    exec(command, function(error, stdout, stderr) { callback(stdout); });
+}
 
 suite('pcap permissions setter', function() {
   setup(function() {});
@@ -58,5 +59,49 @@ suite('pcap permissions setter', function() {
 suite('pcap parser', function() {
   setup(function() {});
   teardown(function() {});
-  
+
+  it('connects successfully to mongo DB', function(done) {
+    var parseObj = parser.initParsing(process.env.MONGO_URL,
+                                      'test', process.env.NET_INTERFACE);
+    parseObj.db.stats(function(x, statsObj){
+      expect(statsObj.db === 'backpack');
+      done();
+    });
+  });
+
+  it('starts a pcap sesssion', function() {
+    try {
+      var pcapSession = parser.startCapsession(process.env.NET_INTERFACE, ['tcp']);
+      expect(pcapSession.isLive === true);
+    } catch (exception) {
+      console.error(exception.message);
+    }
+  });
+
+  it('publishes received packets to the netdata store', function(done) {
+    try {
+      var parseObj = parser.initParsing(process.env.MONGO_URL,
+                                        'test', process.env.NET_INTERFACE);
+      var testSub = mubsub(process.env.MONGO_URL);
+      var testChannel = testSub.channel('test', { size: 100000, max: 500 });
+      var testSubscription = testChannel.subscribe(['newpacket'], function(thispacket) {
+        expect(thispacket !== undefined);
+        testSubscription.unsubscribe();
+        done();
+      });
+    } catch (exception) {
+      console.error(exception.message);
+    }
+  });
+
+  it('caps DB collection to specified size', function(done) {
+    // TODO make foo a valid collection
+    var db = mongojs.connect(process.env.MONGO_URL.slice(10), ['testcapping']);
+    db = parser.capDBCollection(db, 'testcapping', process.env.DB_NETSIZE);
+    db.testcapping.isCapped(function(err, res) {
+      db.close();
+      expect(res === true);
+      done();
+    });
+  });
 });

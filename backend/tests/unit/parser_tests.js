@@ -6,7 +6,7 @@ var expect = chai.expect;
 // chai.use(require('sinon-chai'));
 // var sinon = require('sinon');
 
-var parser = require('../../parser/pcap_parser');
+var parser = require('../../../backend/parser/pcap_parser');
 var mongojs = require('mongojs');
 var mubsub = require('mubsub');
 // function for executing shell commands and getting output
@@ -17,7 +17,9 @@ function execute(command, callback) {
 }
 
 suite('pcap permissions setter', function() {
-  setup(function() {});
+  setup(function() {
+    execute('../../../backend/parser/cap_permission.sh', function(){});
+  });
   teardown(function() {});
 
   var parserPath = process.cwd() + '/backend/parser/pcap_parser.js';

@@ -16,7 +16,8 @@
     "css:sass": "node-sass app/client/styles/styles.scss app/client/styles/styles.css",
     "css:prefix": "autoprefixer -b 'last 2 versions' app/client/styles/styles.css",
     "watch-sass": "nodemon -e scss -w app/client/styles -x 'npm run css:sass & npm run css:prefix'",
-    "start": "npm run-script meteor & npm run-script parser & npm run-script modeler"
+    "start": "npm run-script meteor & npm run-script parser & npm run-script modeler",
+    "test": "npm run-script setperms; istanbul cover _mocha -- -u tdd -R spec backend/tests/unit/parser_tests.js"
   },
   "dependencies": {
     "deepmerge": "^0.2.7",
@@ -30,6 +31,8 @@
   "devDependencies": {
     "autoprefixer": "^5.2.0",
     "chai": "^3.2.0",
+    "istanbul": "^0.3.18",
+    "mocha": "^2.2.5",
     "node-sass": "^3.2.0"
   }
 }

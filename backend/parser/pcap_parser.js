@@ -5,7 +5,7 @@ var mongojs = require('mongojs');
 var mubsub = require('mubsub');
 var merge = require('deepmerge');
 var pcap = require('pcap');
-var iface = process.env.NET_INTERFACE;
+var netIface = process.env.NET_INTERFACE;
 
 // initParsing(process.env.MONGO_URL, 'netdata', iface);
 
@@ -30,6 +30,7 @@ function initParsing(dbURL, tableName, netIface) {
   // proposed solution:
   // store available fields as able, then rely on models to toString() packet
   // data
+  /* istanbul ignore next */
   pcapSession.on('packet', function (rawPacket) {
     var packet = pcap.decode.packet(rawPacket);
 
@@ -71,6 +72,7 @@ function capDBCollection(thisdb, collection, dbsize) {
 
   thisdb[collection].isCapped(function(err,res) {
     if(res === false) {
+      /* istanbul ignore next */
       thisdb.runCommand({'convertToCapped': collection, size: dbsize});
     }
   });

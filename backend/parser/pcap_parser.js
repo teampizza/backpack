@@ -5,12 +5,14 @@ var mongojs = require('mongojs');
 var mubsub = require('mubsub');
 var merge = require('deepmerge');
 var pcap = require('pcap');
-var netIface = process.env.NET_INTERFACE;
+var configNetIface = process.env.NET_INTERFACE;
 
 // initParsing(process.env.MONGO_URL, 'netdata', iface);
 
 // the main function that does all the work
 function initParsing(dbURL, tableName, netIface) {
+  // default net interface
+  netIface = (netIface !== undefined ? netIface : configNetIface);
   // make sure netdata DB is capped (10Mb here)
   var db = mongojs.connect(dbURL.slice(10), [tableName]);
   capDBCollection(db, tableName, process.env.DB_NETSIZE);

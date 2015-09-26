@@ -9,7 +9,7 @@ var chai = require('chai');
 var expect = chai.expect;
 // chai.use(require('sinon-chai'));
 // var sinon = require('sinon');
-
+var fs = require('fs');
 var modelMaster = require('../../../backend/parser/model_master');
 var mongojs = require('mongojs');
 var mubsub = require('mubsub');
@@ -20,7 +20,12 @@ suite('model init', function() {
   });
   teardown(function() {});
 
-  it('loads as many model functions as are in models dir', function() {});
+  it('loads as many model functions as are in models dir', function() {
+    // not actually the model functions but the subdirs containing the files
+    // that...anyway
+    var modelList = fs.readdirSync('../../../backend/modeler/models');
+    
+  });
 
   it('subscribes to netdata collection', function() {});
 

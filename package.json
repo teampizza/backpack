@@ -17,9 +17,10 @@
     "css:prefix": "autoprefixer -b 'last 2 versions' app/client/styles/styles.css",
     "watch-sass": "nodemon -e scss -w app/client/styles -x 'npm run css:sass & npm run css:prefix'",
     "start": "npm run-script meteor & npm run-script parser & npm run-script modeler",
-    "test": "npm run-script setperms; istanbul cover _mocha -- -u tdd -R spec backend/tests/unit/parser_tests.js"
+    "test": "npm run-script setperms; istanbul cover _mocha -- -u tdd -R spec backend/tests/unit/"
   },
   "dependencies": {
+    "async": "^1.4.2",
     "deepmerge": "^0.2.7",
     "dotenv": "^1.2.0",
     "include-all": "^0.1.6",

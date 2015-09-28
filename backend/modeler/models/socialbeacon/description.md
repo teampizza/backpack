@@ -41,10 +41,10 @@ regexes `tcp.data`). If it finds it, it alerts providing the referrer (also in
 
 ### report layout ###
 
-Report gives an abbreviated JSON of `msg: referer` and `created_date` at the
+Report gives an abbreviated JSON of `msg: referer` and `createdDate` at the
 moment, but will be revised with alert spec.
 
     {
 	  "msg": referer,
-	  "created_date": Date.now()
+	  "createdDate": Date.now()
 	}

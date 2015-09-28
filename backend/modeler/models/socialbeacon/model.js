@@ -1,3 +1,4 @@
+'use strict';
 // original POC, search for Facebook Connect social beacon
 // liberally borrowed from
 // https://github.com/mranney/node_pcap/blob/master/examples/network_grep.js
@@ -11,8 +12,8 @@ var socialbeacon = function(netdata) {
 	var testdata = netdata.link.ip.tcp.data;
 
 	// things we want to match
-	sourcematcher = /connect.facebook.net/;
-	referermatcher = /Referer: (.*)/;
+	var sourcematcher = /connect.facebook.net/;
+	var referermatcher = /Referer: (.*)/;
 	// output-use vars
 	var referer;
 
@@ -28,7 +29,7 @@ var socialbeacon = function(netdata) {
 			// if we pass, return an alert
 			// TODO alert spec!!
 			return({msg: referer,
-							created_date: Date.now()
+							createdDate: Date.now()
 						 });
 		}
 	}

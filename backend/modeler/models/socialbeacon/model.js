@@ -6,24 +6,25 @@
 
 // what we're looking for now is the site that referred us to FB
 
-var socialbeacon = function(netdata) {
+var socialBeacon = function(netData) {
 	// TODO test input, fail gracefully
 	// e.g. for protocol, etc.
-	var testdata = netdata.link.ip.tcp.data;
 
+  // socialBeacon
+	var testData = netData.link.ip.tcp.data;
+  
 	// things we want to match
-	var sourcematcher = /connect.facebook.net/;
-	var referermatcher = /Referer: (.*)/;
+	var sourceMatcher = /connect.facebook.net/;
+	var refererMatcher = /Referer: (.*)/;
 	// output-use vars
 	var referer;
 
 	// do the matching
 	// TODO refactor, tests can be combined
-	if (testdata && sourcematcher.test(testdata.toString())) {
-		// console.log(testdata.toString());
-		
-		if (referermatcher.test(testdata.toString())) {
-			referer = referermatcher.exec(testdata.toString())[1];
+	if (testData && sourceMatcher.test(testData.toString())) {
+		// console.log(testData.toString());
+		if (refererMatcher.test(testData.toString())) {
+			referer = refererMatcher.exec(testData.toString())[1];
 			// console.log(referer);
 			
 			// if we pass, return an alert
@@ -33,6 +34,6 @@ var socialbeacon = function(netdata) {
 						 });
 		}
 	}
-}
+};
 
-module.exports = socialbeacon;
+module.exports = socialBeacon;
